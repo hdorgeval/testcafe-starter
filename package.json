@@ -1,0 +1,46 @@
+{
+  "name": "testcafe-starter",
+  "version": "1.0.0",
+  "description": "starter project for e2e tests with testcafe",
+  "main": "index.js",
+  "scripts": {
+    "testcafe": "testcafe chrome features/**/*.spec.ts --selector-timeout 10000 --screenshots-on-fail --screenshots ./screenshots",
+    "pretest": "rimraf screenshots",
+    "test": "npm run config:local && npm run testcafe -- --debug-on-fail",
+    "test:teamcity": "npm run config:teamcity && npm run testcafe -- --reporter teamcity",
+    "config:teamcity": "ncp config/teamcity-config.ts config/testcafe-config.ts",
+    "config:local": "ncp config/local-config.ts config/testcafe-config.ts",
+    "tsc": "tsc",
+    "tsc:init": "tsc --init",
+    "tslint:init": "tslint --init"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdorgeval/testcafe-starter.git"
+  },
+  "keywords": [
+    "testcafe",
+    "typescript",
+    "e2e"
+  ],
+  "author": "Henri d'Orgeval",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hdorgeval/testcafe-starter/issues"
+  },
+  "homepage": "https://github.com/hdorgeval/testcafe-starter#readme",
+  "dependencies": {
+    "@types/node": "8.0.53",
+    "cross-env": "5.1.1",
+    "ncp": "2.0.0",
+    "rimraf": "2.6.2",
+    "testcafe": "0.18.2",
+    "testcafe-reporter-teamcity": "1.0.9",
+    "ts-node": "3.3.0",
+    "typescript": "2.6.1"
+  },
+  "devDependencies": {
+    "eslint": "4.11.0",
+    "tslint": "5.8.0"
+  }
+}

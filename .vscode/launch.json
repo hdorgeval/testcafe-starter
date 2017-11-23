@@ -1,0 +1,23 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+
+    {
+      "type": "node",
+      "protocol": "inspector",
+      "request": "launch",
+      "name": "Launch test files with TestCafe",
+      "program": "${workspaceRoot}/node_modules/testcafe/bin/testcafe.js",
+      "args": [
+        "chrome",
+        "features/**/*.spec.ts",
+        "--debug-on-fail",
+        "--selector-timeout 10000"
+      ],
+      "cwd": "${workspaceRoot}"
+    }
+  ]
+}
