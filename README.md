@@ -24,3 +24,24 @@ test("Scenario: send feedback", async () => {
   await  then("a 'Thank you' message should appear with my name");
 });
 ```
+
+## After cloning the repo
+
+* run the command `npm install`
+
+## To execute the tests
+
+* run the command `npm test`
+
+## To debug a test in Visual Studio Code
+
+* set one or more breakpoints in your code
+* Start debugging
+
+## Visual Studio Code requirements
+
+* the VS Code version must be >= 1.18.0
+
+
+
+
