@@ -20,12 +20,12 @@ test("Scenario: cannot submit my feedback when I did not enter my name", async (
 });
 
 test("Scenario: can send feedback with my name only", async () => {
-  await  when("I enter my name only");
+  await  when("I enter my name");
   await  then("I can submit my feedback on testcafe");
 });
 
 test("Scenario: send feedback", async () => {
-  await given("I enter my name only");
-  await when("I send my feedback on testcafe");
-  await then("a 'Thank you' message should appear with my name");
+  await given("I enter my name");
+  await  when("I send my feedback on testcafe");
+  await  then("a 'Thank you' message should appear with my name");
 });

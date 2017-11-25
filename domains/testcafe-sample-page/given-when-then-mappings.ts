@@ -1,7 +1,7 @@
 import * as step from "./steps";
 
 export const givenStepMappings = {
-  "I enter my name only": step.i_enter_my_name_only,
+  "I enter my name": step.i_enter_my_name,
   "I navigate to the testcafe sample page": step.i_navigate_to_the_testcafe_sample_page,
   "I send my feedback on testcafe": step.i_send_my_feedback_on_testcafe,
 };
