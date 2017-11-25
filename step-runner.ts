@@ -6,7 +6,7 @@ async function executeStep(stepName: GivenStep | ThenStep) {
     await foundStep(stepName);
     return;
   }
-  throw new Error(`Step "${stepName}" is not mapped to executable code.`);
+  throw new Error(`Step "${stepName}" is not mapped to an executable code.`);
 }
 export async function given(stepName: GivenStep) {
   await executeStep(stepName);
