@@ -1,6 +1,11 @@
+import {t} from "testcafe";
 import {GivenStep, stepMappings, ThenStep} from "./domains";
 
 async function executeStep(stepName: GivenStep | ThenStep) {
+  const canExecute: boolean | undefined = t.ctx.canExecute;
+  if (canExecute === false) {
+    return;
+  }
   const foundStep = stepMappings[stepName];
   if (typeof foundStep === "function" ) {
     await foundStep(stepName);

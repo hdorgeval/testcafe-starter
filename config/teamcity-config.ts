@@ -1,6 +1,7 @@
 import { IConfig } from "./config.interface";
 
 export default {
+  env: "devci",
   testcafe: {
     testSpeed: 1.0,
   },

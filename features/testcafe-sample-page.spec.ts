@@ -1,6 +1,7 @@
 import "testcafe";
 import config from "../config/testcafe-config";
 import {defaultPageModel as inputData} from "../domains/testcafe-sample-page";
+import { env } from "../step-filters";
 import {and, given, then, when} from "../step-runner";
 
 fixture(`Feature: TestCafe Example`)
@@ -25,6 +26,8 @@ test("Scenario: can send feedback with my name only", async () => {
 });
 
 test("Scenario: send feedback", async () => {
+  await env.only( "devci");
+  //
   await given("I enter my name");
   await  when("I send my feedback on testcafe");
   await  then("a 'Thank you' message should appear with my name");

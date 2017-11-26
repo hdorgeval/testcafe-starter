@@ -1,4 +1,5 @@
 export interface IConfig {
+  env: TargetEnvironnement;
   url: string;
   user: IUserInfo;
   testcafe: ITestcafeOptions;
@@ -12,3 +13,8 @@ export interface IUserInfo {
   login?: string;
   password?: string;
 }
+
+export type TargetEnvironnement =
+| "any"
+| "devci"
+| "uat";

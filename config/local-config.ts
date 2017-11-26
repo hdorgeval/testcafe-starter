@@ -1,6 +1,7 @@
 import {IConfig} from "./config.interface";
 
 export default {
+  env: "any",
   testcafe: {
     testSpeed: 0.7,
   },
