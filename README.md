@@ -1,9 +1,9 @@
 # TestCafe Starter
-## A lightweight and extensible framework to write e2e tests in a gherkin-like syntax.
-
 <a href="https://github.com/DevExpress/testcafe">
     <img alt="Gherkin with TestCafe" src="https://img.shields.io/badge/gherkin%20with-TestCafe-2fa4cf.svg">
 </a>
+
+## A lightweight and extensible framework to write e2e tests in a gherkin-like syntax.
 
 ```typescript
 fixture(`Feature: TestCafe Example`);
