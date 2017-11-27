@@ -1,9 +1,8 @@
 # Features
-### This documentation is still in progress
 
 This folder is, by convention, the place for the TestCafe test files.
 
-# Creating a new test
+## Creating a new test
 
 * Create an empty TypeScript file and give it a name like `my-new-feature.spec.ts`
 
@@ -39,5 +38,12 @@ This starter project has been designed to put the business at the center of the 
 The way you express the different steps should be aligned with the language used by the business and/or end-users.
 Take time to make your steps readable by those people.
 
+Visual Studio Code IntelliSense signals you these new steps are unknown:
 
+![unknown steps](../.media/screenshot01.png)
 
+To see if an existing step can be used, just empty the step name and use VS Code IntelliSense:
+
+![unknown steps](../.media/screenshot02.png)
+
+If you don't find an existing suitable step, you need to create a new one [here](../domains/README.md).
