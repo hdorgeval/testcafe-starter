@@ -3,6 +3,10 @@ package-lock.json
 
 # Screenshots
 screenshots
+
+#build
+build
+
 # Logs
 logs
 *.log

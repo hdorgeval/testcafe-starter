@@ -5,7 +5,8 @@
     "**/.svn": true,
     "**/.hg": true,
     "**/CVS": true,
-    "**/.DS_Store": true
+    "**/.DS_Store": true,
+    "**/build": true
   },
   "editor.tabCompletion": true,
   "editor.formatOnSave": false,
