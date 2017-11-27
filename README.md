@@ -45,6 +45,14 @@ test("Scenario: send feedback", async () => {
 
 * the VS Code version must be >= 1.18.0
 
+## Recommended Visual Studio Code Extensions
 
+* Move TS (will automatically chage all imports when you rename or move a step file)
+* TSLint
+* Git Lens
+* Regex Previewer by Christof Marti
 
+## How to create a new test
+
+* see the [readme](features/README.md)
 
