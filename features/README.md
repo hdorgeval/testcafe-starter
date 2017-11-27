@@ -33,3 +33,11 @@ test("Scenario: my new scenario", async () => {
 });
 
 ```
+
+This starter project has been designed to put the business at the center of the e2e strategy.
+
+The way you express the different steps should be aligned with the language used by the business and/or end-users.
+Take time to make your steps readable by those people.
+
+
+
