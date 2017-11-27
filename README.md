@@ -36,6 +36,10 @@ test("Scenario: send feedback", async () => {
 
 * run the command `npm test`
 
+## To check for typescript and linting errors
+
+* run the command `npm run build`
+
 ## To debug a test in Visual Studio Code
 
 * set one or more breakpoints in your code
