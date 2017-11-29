@@ -60,3 +60,36 @@ test("Scenario: send feedback", async () => {
 
 * see the [readme](features/README.md)
 
+## How to run a test only in specific environment(s)
+
+* The environment is the host that will execute the TestCafe tests. 
+* The environment is set in the config file injected at runtime in the Fixture Context.
+* All possible values are, by convention,  defined in the [config.interface.ts](./config/config.interface.ts) file
+
+* Add this line as a first step in the test:
+```typescript
+test("Scenario: send feedback", async () => {
+  await env.only( "devci");
+  //
+  await given("I enter my name");
+  await  when("I send my feedback on testcafe");
+  await  then("a 'Thank you' message should appear with my name");
+});
+```
+
+* to select another environment, just use the VS Code IntelliSense:
+  ![available environments](./.media/screenshot04.png)
+
+* to target multiple environments:
+```typescript
+test("Scenario: send feedback", async () => {
+  await env.only( "uat", "devci");
+  //
+  await given("I enter my name");
+  await  when("I send my feedback on testcafe");
+  await  then("a 'Thank you' message should appear with my name");
+});
+```
+
+
+
