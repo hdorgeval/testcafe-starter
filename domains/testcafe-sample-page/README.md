@@ -37,3 +37,12 @@ By convention, step definition files are organized in the following way:
     * check the test fails with the following message:
       ![not yet implemented](../../.media/screenshot03.png)
 
+    * it's time now to write the real step implementation:
+      * create a new empty file in the `steps` folders.
+      * give this file the same name as the step name 
+      * consider using the kebab-case naming convention in order to quickly find the implementation associated to a given step through the Command Palette:
+        ![find the step implementation](../../.media/screenshot05.png)
+
+    
+
+
