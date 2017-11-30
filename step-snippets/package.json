@@ -1,0 +1,21 @@
+{
+    "name": "step-snippets",
+    "displayName": "step-snippets",
+    "description": "code snippets for steps in testcafe-starter",
+    "version": "0.0.1",
+    "publisher": "hdorgeval",
+    "engines": {
+        "vscode": "^1.18.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "typescript",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}

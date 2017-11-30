@@ -1,0 +1,12 @@
+{
+  "Not implemented step": {
+    "prefix": "stc-not-implemented-step",
+    "body": [
+      "export default async (stepName: string): Promise<void>  => {",
+      "\tthrow new Error(`Step \"\\${stepName\\}\" is not yet implemented.`);",
+      "};",
+      ""
+    ],
+    "description": "Not implemented step"
+  }
+}
