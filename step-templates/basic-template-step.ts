@@ -8,7 +8,7 @@ export default async (stepName: string) => {
   // get the config that was injected into the fixture context by the feature
   const config = t.fixtureCtx.config as IConfig;
 
-  // get the page object model that was injected in the context
+  // get the page object model that was injected in the test context
   const inputData = t.ctx.inputData as IPageModel;
 
   // extract the value embedded in the step name
