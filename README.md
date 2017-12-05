@@ -9,7 +9,7 @@
 fixture(`Feature: TestCafe Example`);
 
 test("Scenario: cannot submit my feedback when I did not enter my name", async () => {
-  await given("I navigate to the testcafe sample page");
+  await  when("I navigate to the testcafe sample page");
   await  then("no name should be populated");
   await   and("I cannot submit my feedback on testcafe");
 });
