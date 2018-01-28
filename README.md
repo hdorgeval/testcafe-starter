@@ -55,6 +55,7 @@ test("Scenario: send feedback", async () => {
 * TSLint
 * Git Lens
 * Regex Previewer by Christof Marti
+* TestCafe Snippets
 
 ## How to create a new test
 
