@@ -37,11 +37,11 @@ test("Scenario: send feedback", async () => {
 * run the command `npm test`.
 
 ## To execute the tests on TeamCity
-* run the command `npm run:teamcity`.
+* run the command `npm run test:teamcity`.
 
 ## To configure the target environment and the target persona
 * add the following options to the TestCafe command-line `--env=xxx --user=yyy`
-* you can create any type of option on the command-line: see the [readme](config/README.md) in the [config](config) folder.
+* you can create any type of option on the command-line: see the [readme](config) in the [config](config) folder.
 
 ## To check for typescript and linting errors
 
