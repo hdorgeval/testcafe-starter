@@ -1,5 +1,5 @@
 import "testcafe";
-import config from "../config/testcafe-config";
+import { currentConfig } from "../config/testcafe-config";
 import {defaultPageModel as inputData} from "../domains/testcafe-sample-page";
 import { env } from "../step-filters";
 import {and, given, then, when} from "../step-runner";
@@ -7,7 +7,7 @@ import {and, given, then, when} from "../step-runner";
 fixture(`Feature: TestCafe Example`)
   .before(async (ctx) => {
     // global config is injected in the fixture context
-    ctx.config = config;
+    ctx.config = currentConfig();
   })
   .beforeEach(async (t) => {
     // page model is initialized with a default page model

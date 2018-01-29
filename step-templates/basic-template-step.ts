@@ -1,12 +1,13 @@
 import {t} from "testcafe";
 import {IConfig} from "../config/config.interface";
+import { currentConfig } from "../config/testcafe-config";
 import { IPageModel } from "../domains/testcafe-sample-page/models";
 import * as selector from "../domains/testcafe-sample-page/selectors";
 import {firstMatch} from "../tools/regex-match";
 
 export default async (stepName: string) => {
   // get the config that was injected into the fixture context by the feature
-  const config = t.fixtureCtx.config as IConfig;
+  const config: IConfig = currentConfig(t);
 
   // get the page object model that was injected in the test context
   const inputData = t.ctx.inputData as IPageModel;

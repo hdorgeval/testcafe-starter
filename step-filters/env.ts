@@ -1,13 +1,15 @@
 import {t} from "testcafe";
-import { IConfig, TargetEnvironnement } from "../config/config.interface";
+import { IConfig } from "../config/config.interface";
+import { TargetEnvironnement } from "../config/environments";
+import { currentConfig } from "../config/testcafe-config";
 
 export const env = {
   only: async (...targets: TargetEnvironnement[]) => {
-    const config = t.fixtureCtx.config as IConfig;
+    const config: IConfig = currentConfig(t);
     if (config.env === undefined) {
       throw new Error("The env property in the configuration file is not defined.");
     }
-    if (config.env === "any") {
+    if (config.env.name === "any") {
       // filters are bypassed if the environment in the configuration file is any
       t.ctx.canExecute = true;
       return;
@@ -17,12 +19,16 @@ export const env = {
     }
     t.ctx.canExecute = false;
     for (const target of targets) {
-      if (config.env === target) {
+      if (config.env.name === target) {
         t.ctx.canExecute = true;
       }
       if (target === "any") {
         t.ctx.canExecute = true;
       }
+    }
+    if (t.ctx.canExecute === false) {
+      // tslint:disable-next-line:no-console
+      console.warn(`Test will not run because it is targeted only for ${targets}`);
     }
   },
 };

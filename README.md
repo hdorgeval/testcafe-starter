@@ -30,19 +30,27 @@ test("Scenario: send feedback", async () => {
 
 ## After cloning the repo
 
-* run the command `npm install`
+* run the command `npm install`.
 
-## To execute the tests
+## To execute the tests locally
 
-* run the command `npm test`
+* run the command `npm test`.
+
+## To execute the tests on TeamCity
+* run the command `npm run:teamcity`.
+
+## To configure the target environment and the target persona
+* add the following options to the TestCafe command-line `--env=xxx --user=yyy`
+* you can create any type of option on the command-line: see the [readme](config/README.md) in the [config](config) folder.
 
 ## To check for typescript and linting errors
 
-* run the command `npm run build`
+* run the command `npm run build`.
 
 ## To debug a test in Visual Studio Code
 
 * set one or more breakpoints in your code
+* setup the TestCafe configuration used by the debug session in the [default-config.ts](config/default-config.ts) file
 * Start debugging
 
 ## Visual Studio Code requirements
@@ -64,8 +72,8 @@ test("Scenario: send feedback", async () => {
 ## How to run a test only in specific environment(s)
 
 * The environment is the host that will execute the TestCafe tests. 
-* The environment is set in the config file injected at runtime in the Fixture Context.
-* All possible values are, by convention,  defined in the [config.interface.ts](./config/config.interface.ts) file
+* The environment is set in the config object injected at runtime in the Fixture Context.
+* All possible values are, by convention,  defined in the [environments.ts](config/environments.ts) file
 
 * Add this line as a first step in the test:
 ```typescript
@@ -91,6 +99,3 @@ test("Scenario: send feedback", async () => {
   await  then("a 'Thank you' message should appear with my name");
 });
 ```
-
-
-

@@ -16,6 +16,7 @@
         "features/**/*.spec.ts",
         "--debug-on-fail",
         "--selector-timeout 10000"
+        // setup the config/default-config.ts file before debugging
       ],
       "cwd": "${workspaceRoot}"
     }

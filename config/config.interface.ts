@@ -1,6 +1,8 @@
+import { IEnvInfo } from "./environments";
+import { IUserInfo } from "./personas";
+
 export interface IConfig {
-  env: TargetEnvironnement;
-  url: string;
+  env: IEnvInfo;
   user: IUserInfo;
   testcafe: ITestcafeOptions;
 }
@@ -8,13 +10,3 @@ export interface IConfig {
 export interface ITestcafeOptions {
   testSpeed: number;
 }
-export interface IUserInfo {
-  name: string;
-  login?: string;
-  password?: string;
-}
-
-export type TargetEnvironnement =
-| "any"
-| "devci"
-| "uat";
