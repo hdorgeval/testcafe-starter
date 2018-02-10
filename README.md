@@ -53,7 +53,7 @@ test("Scenario: send feedback", async () => {
 * setup the TestCafe configuration used by the debug session in the [default-config.ts](config/default-config.ts) file
 * Start debugging
 
-## To use live mode
+## To use Live mode
 
 [TestCafe Live](https://github.com/DevExpress/testcafe-live) provides a service that keeps the TestCafe process and browsers opened the whole time you are working on tests. Changes you make in code immediately restart the tests. That is, TestCafe Live allows you to see test results instantly.
 
