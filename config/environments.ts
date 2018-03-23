@@ -1,4 +1,4 @@
-export const environments: [IEnvInfo] = [
+export const environments: IEnvInfo[] = [
   {name: "local", url: "http://devexpress.github.io/testcafe/example"},
   {name: "devci", url: "http://devci.my-company.com"},
   {name: "uat1",  url: "http://uat1.my-company.com"},
