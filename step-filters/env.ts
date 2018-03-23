@@ -1,11 +1,11 @@
 import {t} from "testcafe";
 import { IConfig } from "../config/config.interface";
 import { TargetEnvironnement } from "../config/environments";
-import { currentConfig } from "../config/testcafe-config";
+import { getCurrentConfig } from "../config/testcafe-config";
 
 export const env = {
   only: async (...targets: TargetEnvironnement[]) => {
-    const config: IConfig = currentConfig(t);
+    const config: IConfig = getCurrentConfig(t);
     if (config.env === undefined) {
       throw new Error("The env property in the configuration file is not defined.");
     }

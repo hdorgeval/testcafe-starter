@@ -43,6 +43,10 @@ test("Scenario: send feedback", async () => {
 * add the following options to the TestCafe command-line `--env=xxx --user=yyy`
 * you can create any type of option on the command-line: see the [readme](config) in the [config](config) folder.
 
+## To create custom command-line options on top of TesCafe command-line options
+* You can add any custom command-line options to the existing TestCafe command-line options. 
+* To do this, customize the content of [parsed-config.ts](parsed-config.ts).
+
 ## To check for typescript and linting errors
 
 * run the command `npm run build`.
@@ -57,7 +61,7 @@ test("Scenario: send feedback", async () => {
 
 [TestCafe Live](https://github.com/DevExpress/testcafe-live) provides a service that keeps the TestCafe process and browsers opened the whole time you are working on tests. Changes you make in code immediately restart the tests. That is, TestCafe Live allows you to see test results instantly.
 
-* rename the feature file into a name that ends with live.ts
+* rename the feature file into a name that ends with .live.ts
 * add .only to the test(s) on which you want to work live
 * run the command `npm run test:live`
 

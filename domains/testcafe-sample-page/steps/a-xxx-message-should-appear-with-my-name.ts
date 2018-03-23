@@ -1,4 +1,5 @@
 import {t} from "testcafe";
+import { getCurrentConfig } from "../../../config/testcafe-config";
 import {firstMatch} from "../../../tools/regex-match";
 import { IPageModel } from "../models";
 import * as selector from "../selectors";
@@ -6,6 +7,7 @@ import * as selector from "../selectors";
 export default async (stepName: string) => {
   // get the page object model that was injected in the context
   const inputData = t.ctx.inputData as IPageModel;
+  const config = getCurrentConfig(t);
 
   // extract the message embedded in the step name
   // by convention this value is prefixed and postfixed by a single quote
@@ -16,7 +18,7 @@ export default async (stepName: string) => {
 
   const myName = inputData.name || "";
   await t
-    .expect(selector.resultContent.exists).ok()
+    .expect(selector.resultContent.exists).ok({timeout: config.testcafe.timeout.longTimeout})
     .expect(selector.resultContent.innerText).contains(message)
     .expect(selector.resultContent.innerText).contains(myName);
 

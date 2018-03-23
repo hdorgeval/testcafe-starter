@@ -1,13 +1,13 @@
 import {t} from "testcafe";
 import {IConfig} from "../config/config.interface";
-import { currentConfig } from "../config/testcafe-config";
+import { getCurrentConfig } from "../config/testcafe-config";
 import { IPageModel } from "../domains/testcafe-sample-page/models";
 import * as selector from "../domains/testcafe-sample-page/selectors";
 import {firstMatch} from "../tools/regex-match";
 
 export default async (stepName: string) => {
   // get the config that was injected into the fixture context by the feature
-  const config: IConfig = currentConfig(t);
+  const config: IConfig = getCurrentConfig(t);
 
   // get the page object model that was injected in the test context
   const inputData = t.ctx.inputData as IPageModel;
@@ -19,15 +19,23 @@ export default async (stepName: string) => {
     throw new Error(`Cannot extract value from the step name "${stepName}"`);
   }
 
+  // you may use the Visual Studio Code Extension Testcafe Snippets
+  // to help you write your tests
+
   await t
     .setTestSpeed(config.testcafe.testSpeed)
-    .expect(selector.firstInputBox.hasAttribute("disabled")).notOk()
-    .typeText(selector.firstInputBox, value, {replace: true});
+    .hover(selector.firstInputBox)
+    .expect(selector.firstInputBox.hasAttribute("disabled")).notOk({timeout: config.testcafe.timeout.longTimeout})
+    .typeText(selector.firstInputBox, value, {replace: true})
+    .pressKey("tab");
 
   if (inputData.name) {
     await t
-    .expect(selector.secondInputBox.hasAttribute("disabled")).notOk()
-    .typeText(selector.secondInputBox, inputData.name, {replace: true});
+      .setTestSpeed(config.testcafe.testSpeed)
+      .hover(selector.secondInputBox)
+      .expect(selector.secondInputBox.hasAttribute("disabled")).notOk({timeout: config.testcafe.timeout.longTimeout})
+      .typeText(selector.secondInputBox, inputData.name, {replace: true})
+      .pressKey("tab");
   }
 
 };

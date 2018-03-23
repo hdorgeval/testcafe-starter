@@ -9,4 +9,11 @@ export interface IConfig {
 
 export interface ITestcafeOptions {
   testSpeed: number;
+  timeout: ITimeout;
+}
+
+export interface ITimeout {
+  [index: string]: number;
+  longTimeout: number;
+  shortTimeout: number;
 }

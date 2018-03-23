@@ -17,6 +17,16 @@ if (parsedConfig && parsedConfig.env) {
 if (parsedConfig && parsedConfig.user) {
   config.user = parsedConfig.user;
 }
+if (parsedConfig && parsedConfig.testcafe && parsedConfig.testcafe.testSpeed) {
+  config.testcafe.testSpeed = parsedConfig.testcafe.testSpeed;
+}
+
+if (parsedConfig && parsedConfig.testcafe && parsedConfig.testcafe.timeout) {
+  config.testcafe.timeout = {
+    ...config.testcafe.timeout,
+    ...parsedConfig.testcafe.timeout,
+  };
+}
 
 // tslint:disable-next-line:no-console
 console.log("Tests will run with the following global configuration: ");
@@ -24,7 +34,7 @@ jsome(config);
 
 export default config;
 
-export function currentConfig(t?: TestController): IConfig {
+export function getCurrentConfig(t?: TestController): IConfig {
   if (t && t.ctx && t.ctx.config) {
     return t.ctx.config;
   }
@@ -33,5 +43,5 @@ export function currentConfig(t?: TestController): IConfig {
     return t.fixtureCtx.config;
   }
 
-  return {...config};
+  return JSON.parse(JSON.stringify(config));
 }
