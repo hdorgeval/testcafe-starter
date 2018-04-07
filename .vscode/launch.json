@@ -18,15 +18,13 @@
       "type": "node",
       "protocol": "inspector",
       "request": "launch",
-      "name": "Launch test files with TestCafe",
+      "name": "TestCafe",
       "program": "${workspaceRoot}/node_modules/testcafe/bin/testcafe.js",
       "args": [
         "chrome",
         "features/**/*.spec.ts",
         "--debug-on-fail",
-        "--selector-timeout 10000",
-        "--reporter",
-        "cucumber-json"
+        "--selector-timeout 10000"
         // setup the config/default-config.ts file before debugging
       ],
       "cwd": "${workspaceRoot}"

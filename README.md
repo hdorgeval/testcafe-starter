@@ -55,6 +55,8 @@ test("Scenario: send feedback", async () => {
 
 * set one or more breakpoints in your code
 * setup the TestCafe configuration used by the debug session in the [default-config.ts](config/default-config.ts) file
+* in the Debug menu, select the `TestCafe` option
+* if you want to start TestCafe with specific command-line options you can modify the [launch.json](.vscode/launch.json) file
 * Start debugging
 
 ## To use Live mode
