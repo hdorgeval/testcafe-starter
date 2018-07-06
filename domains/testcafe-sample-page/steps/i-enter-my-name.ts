@@ -17,6 +17,7 @@ export default async (_: string) => {
     .setTestSpeed(config.testcafe.testSpeed)
     .hover(selector.userNameInputBox)
     .expect(selector.userNameInputBox.hasAttribute("disabled")).notOk()
+    .click(selector.userNameInputBox)
     .typeText(selector.userNameInputBox, value, {replace: true})
     .pressKey("tab");
 };
