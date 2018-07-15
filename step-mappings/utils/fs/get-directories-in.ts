@@ -9,7 +9,7 @@ export const getDirectoriesIn = (path: PathLike) => {
 
   return new FluentSyntaxForDirectoryFiltering(result);
 };
-class FluentSyntaxForDirectoryFiltering {
+export class FluentSyntaxForDirectoryFiltering {
   private allResults: string[] = [];
   private filteredResults: string[] = [];
 

@@ -1,8 +1,8 @@
-import { getFileName } from "./get-filename";
+import { sep } from "path";
 
 export const ignoreDotDir = (path: string) => {
-  const folderName = getFileName(path);
-  return folderName
-    ? folderName.startsWith(".") === false
-    : true;
+  return path
+    .split(sep)
+    .filter((folderName) => folderName.startsWith("."))
+    .length === 0;
 };
