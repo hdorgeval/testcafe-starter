@@ -22,6 +22,7 @@ export const createStepsBarrel = (path: PathLike) => {
           const relativePath = filePath.replace(`${config.rootDirectory}${sep}`, "");
           const defaultExportName = getFuncNameFrom(fileName);
           const module = require(filePath);
+
           module.default
           ? lines.push(
             // tslint:disable-next-line:max-line-length

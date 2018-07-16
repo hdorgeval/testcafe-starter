@@ -5,6 +5,7 @@ export const config: IStepMappingConfig = {
   quoteMark: "\"",
   rootDirectory: process.cwd(),
   stepsBarrelFile: join("step-mappings", "steps.ts"),
+  stepsMappingFile: join("step-mappings", "index.ts"),
 };
 
 export interface IStepMappingConfig {
@@ -12,4 +13,5 @@ export interface IStepMappingConfig {
   rootDirectory: string;
   stepsBarrelFile: string;
   quoteMark: string;
+  stepsMappingFile: string;
 }
