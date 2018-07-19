@@ -20,12 +20,13 @@ export const createStepsMapping = (path: PathLike) => {
   writeFileSync(path, "importing steps and creating given/when/then mappings...");
   return {
     from: (stepFiles: string[]): void => {
-      // tslint:disable-next-line:no-console
-      console.log(stepFiles);
       const lines: string[] = [];
       lines.push(...createImports());
       lines.push("");
-      lines.push(...createGivenStepMappingsFrom(stepFiles));
+      lines.push(...createStepMappingsFrom(stepFiles).forStep("given"));
+      lines.push(...createStepMappingsFrom(stepFiles).forStep("when"));
+      lines.push(...createStepMappingsFrom(stepFiles).forStep("then"));
+      lines.push(...createStepMappingsFrom(stepFiles).forStep("but"));
       lines.push("");
       writeFileSync(path, lines.join(EOL));
     },
@@ -50,40 +51,50 @@ export interface IStepMapping {
   stepFunc: string;
 }
 
-function createGivenStepMappingsFrom(stepFiles: string[]) {
-  const lines: string[] = [];
-  lines.push("export const givenStepMappings = {");
-  getGivenStepMappingsFrom(stepFiles).map((stepMapping) => {
-    lines.push(
-      `${config.tab}${config.quoteMark}${stepMapping.stepSentence}${
-        config.quoteMark
-      }: step.${stepMapping.stepFunc},`,
-    );
-  });
-  lines.push("};");
-  return lines;
+function createStepMappingsFrom(stepFiles: string[]) {
+  return {
+    forStep: (step: string): string[] => {
+      const lines: string[] = [];
+      lines.push(`export const ${step}StepMappings = {`);
+      getStepMappingsFrom(stepFiles)
+          .forStep(step)
+          .map((stepMapping) => {
+        lines.push(
+          // tslint:disable-next-line:max-line-length
+          `${config.tab}${config.quoteMark}${stepMapping.stepSentence}${config.quoteMark}: step.${stepMapping.stepFunc},`,
+        );
+      });
+      lines.push("};");
+      return lines;
+    },
+  };
 }
 
-function getGivenStepMappingsFrom(stepFiles: string[]): IStepMapping[] {
-  const results: IStepMapping[] = [];
-  stepFiles.map((filePath) => {
-    const fileName = getFileName(filePath) || `defaultStep${nextIndex()}`;
-    const defaultExportName = getFuncNameFrom(fileName);
-    getExportedFunctionsIn(filePath).map((funcInfo) => {
-      return getJsDocCommentsOf(funcInfo)
-        .filter((comment) => comment.includes("@given"))
-        .map((comment: string) => {
-          const firstIndex = comment.indexOf("(") + 2;
-          const lastIndex = comment.lastIndexOf(")") - 1;
-          const stepSentence = comment.substring(firstIndex, lastIndex);
-          const stepFunc =
-            funcInfo.functionName === "default"
-              ? defaultExportName
-              : funcInfo.functionName;
-          return { stepSentence, stepFunc };
-        })
-        .map((stepMapping: IStepMapping) => results.push(stepMapping));
-    });
-  });
-  return results;
+function getStepMappingsFrom(stepFiles: string[]) {
+  return {
+    forStep:  (step: string): IStepMapping[]  =>   {
+      const results: IStepMapping[] = [];
+      stepFiles.map((filePath) => {
+      const fileName = getFileName(filePath) || `defaultStep${nextIndex()}`;
+      const defaultExportName = getFuncNameFrom(fileName);
+      getExportedFunctionsIn(filePath).map((funcInfo) => {
+        return getJsDocCommentsOf(funcInfo)
+          .filter((comment) => comment.includes(`@${step}`))
+          .map((comment: string) => {
+            const firstIndex = comment.indexOf("(") + 2;
+            const lastIndex = comment.lastIndexOf(")") - 1;
+            const stepSentence = comment.substring(firstIndex, lastIndex);
+            const stepFunc =
+              funcInfo.functionName === "default"
+                ? defaultExportName
+                : funcInfo.functionName;
+            return { stepSentence, stepFunc };
+          })
+          .map((stepMapping: IStepMapping) => results.push(stepMapping));
+        });
+      });
+      return results;
+    },
+  };
+
 }

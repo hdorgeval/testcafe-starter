@@ -17,7 +17,8 @@
     "install:snippets": "ncp step-snippets $HOME/.vscode/extensions/testcafe-starter-snippets",
     "preinstall": "rimraf node_modules",
     "pretestcafe-static-analyser": "rimraf reports",
-    "testcafe-static-analyser": "testcafe-static-analyser"
+    "testcafe-static-analyser": "testcafe-static-analyser",
+    "build-step-mappings": "ts-node step-mappings/utils/build.ts"
   },
   "repository": {
     "type": "git",
