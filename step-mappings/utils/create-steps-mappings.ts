@@ -8,6 +8,7 @@ import { getFilePathWithoutExtension } from "./fs/get-filepath-without-extension
 import { getFuncNameFrom } from "./fs/get-func-name-from-file-name";
 import { getJsDocCommentsOf } from "./fs/get-jsdoc-of-function";
 import { getRelativePathOf } from "./fs/get-relative-path-from";
+import { slash } from "./fs/slash";
 
 let exportIndex: number = -1;
 function nextIndex() {
@@ -39,9 +40,7 @@ function createImports(): string[] {
   lines.push("// tslint:disable:max-line-length");
   lines.push(
     // tslint:disable-next-line:max-line-length
-    `import * as step from ${config.quoteMark}${getFilePathWithoutExtension(
-      stepsBarrelRelativePath,
-    )}${config.quoteMark};`,
+    `import * as step from ${config.quoteMark}${slash(getFilePathWithoutExtension(stepsBarrelRelativePath))}${config.quoteMark};`,
   );
   return lines;
 }

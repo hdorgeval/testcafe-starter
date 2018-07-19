@@ -6,6 +6,7 @@ import { getFileName } from "./fs/get-filename";
 import { getFilePathWithoutExtension } from "./fs/get-filepath-without-extension";
 import { getFuncNameFrom } from "./fs/get-func-name-from-file-name";
 import { getRelativePathOf } from "./fs/get-relative-path-from";
+import { slash } from "./fs/slash";
 
 let exportIndex: number = -1;
 function nextIndex() {
@@ -30,10 +31,11 @@ export const createStepsBarrel = (barrelFilePath: PathLike) => {
           module.default
           ? lines.push(
             // tslint:disable-next-line:max-line-length
-            `export { default as ${defaultExportName} } from ${config.quoteMark}${getFilePathWithoutExtension(relativePath)}${config.quoteMark};`,
+            `export { default as ${defaultExportName} } from ${config.quoteMark}${slash(getFilePathWithoutExtension(relativePath))}${config.quoteMark};`,
           )
           : lines.push(
-            `export * from ${config.quoteMark}${getFilePathWithoutExtension(relativePath)}${config.quoteMark};`,
+            // tslint:disable-next-line:max-line-length
+            `export * from ${config.quoteMark}${slash(getFilePathWithoutExtension(relativePath))}${config.quoteMark};`,
           );
         });
       lines.push("");
