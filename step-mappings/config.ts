@@ -4,8 +4,9 @@ export const config: IStepMappingConfig = {
   excludedFolders: ["config", "build", "step-mappings", "reports", "step-snippets", "step-templates", "tools"],
   quoteMark: "\"",
   rootDirectory: process.cwd(),
-  stepsBarrelFile: join("step-mappings", "steps.ts"),
-  stepsMappingFile: join("step-mappings", "index.ts"),
+  stepsBarrelFile: join("step-mappings", "steps.ts"), // absolute path from rootDirectory
+  stepsMappingFile: join("step-mappings", "index.ts"), // absolute path from rootDirectory
+  tab: "  ",
 };
 
 export interface IStepMappingConfig {
@@ -14,4 +15,5 @@ export interface IStepMappingConfig {
   stepsBarrelFile: string;
   quoteMark: string;
   stepsMappingFile: string;
+  tab: string;
 }

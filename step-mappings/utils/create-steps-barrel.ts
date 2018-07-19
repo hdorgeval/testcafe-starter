@@ -1,17 +1,20 @@
 import { PathLike, writeFileSync } from "fs";
 import { EOL } from "os";
-import { sep } from "path";
 import { config } from "../config";
+import { ensureDirectoryStructureExists } from "./fs/ensure-directory-structure-exists";
 import { getFileName } from "./fs/get-filename";
 import { getFilePathWithoutExtension } from "./fs/get-filepath-without-extension";
 import { getFuncNameFrom } from "./fs/get-func-name-from-file-name";
+import { getRelativePathOf } from "./fs/get-relative-path-from";
 
 let exportIndex: number = -1;
 function nextIndex() {
   exportIndex += 1;
   return exportIndex;
 }
-export const createStepsBarrel = (path: PathLike) => {
+export const createStepsBarrel = (barrelFilePath: PathLike) => {
+  ensureDirectoryStructureExists(barrelFilePath.toString());
+  writeFileSync(barrelFilePath, "searching steps ...");
   return {
     from: (stepFiles: string[]): void => {
       const lines: string[] = [];
@@ -19,7 +22,8 @@ export const createStepsBarrel = (path: PathLike) => {
       stepFiles
         .map((filePath) => {
           const fileName = getFileName(filePath) || `defaultStep${nextIndex()}` ;
-          const relativePath = filePath.replace(`${config.rootDirectory}${sep}`, "");
+          const relativePath = getRelativePathOf(filePath).from(barrelFilePath.toString());
+
           const defaultExportName = getFuncNameFrom(fileName);
           const module = require(filePath);
 
@@ -33,7 +37,8 @@ export const createStepsBarrel = (path: PathLike) => {
           );
         });
       lines.push("");
-      writeFileSync(path, lines.join(EOL));
+
+      writeFileSync(barrelFilePath, lines.join(EOL));
     },
   };
 };
