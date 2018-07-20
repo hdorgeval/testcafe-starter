@@ -11,15 +11,16 @@ async function executeStep(
     stepName: GivenStep | WhenStep | ThenStep | ButStep,
     stepMappings: IStepMappings,
   ) {
-  const canExecute: boolean | undefined = t.ctx.canExecute;
-  if (canExecute === false) {
+  if (testExecutionWasCanceledByPreviousStep()) {
     return;
   }
+
   const foundStep = stepMappings[stepName];
   if (typeof foundStep === "function" ) {
     await foundStep(stepName as string);
     return;
   }
+
   throw new Error(`Step "${stepName}" is not mapped to an executable code.`);
 }
 export async function given(stepName: GivenStep) {
@@ -71,4 +72,11 @@ function ensureThat(stepName: GivenStep | WhenStep | ThenStep | ButStep ) {
       }
     },
   };
+}
+
+function testExecutionWasCanceledByPreviousStep(): boolean {
+  const canExecute: boolean | undefined = t.ctx.canExecute;
+  return canExecute === false
+    ? true
+    : false;
 }
