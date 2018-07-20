@@ -1,6 +1,6 @@
 import "testcafe";
 import { getCurrentConfig } from "../config/testcafe-config";
-import {defaultPageModel as inputData} from "../domains/testcafe-sample-page";
+import {pageModel} from "../domains/testcafe-sample-page";
 import { env } from "../step-filters";
 import {and, given, then, when} from "../step-runner";
 
@@ -11,7 +11,7 @@ fixture("Feature: TestCafe Example")
   })
   .beforeEach(async (t) => {
     // page model is initialized with a default page model
-    t.ctx.inputData = inputData;
+    t.ctx.inputData = pageModel;
     await given("I navigate to the testcafe sample page");
   });
 
