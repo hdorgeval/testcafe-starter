@@ -2,6 +2,7 @@ import {t} from "testcafe";
 import { IConfig } from "../config/config.interface";
 import { TargetEnvironnement } from "../config/environments";
 import { getCurrentConfig } from "../config/testcafe-config";
+import chalk from "../node_modules/chalk";
 
 export const env = {
   only: async (...targets: TargetEnvironnement[]) => {
@@ -28,7 +29,9 @@ export const env = {
     }
     if (t.ctx.canExecute === false) {
       // tslint:disable-next-line:no-console
-      console.warn(`Test will not run because it is targeted only for ${targets}`);
+      const message = `next steps will not run because scenario is targeted only for ${targets}`;
+      // tslint:disable-next-line:no-console
+      console.log(`    ${chalk.inverse(message)}`);
     }
   },
 };
