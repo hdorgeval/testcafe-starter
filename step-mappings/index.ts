@@ -2,26 +2,29 @@
 // tslint:disable:max-line-length
 import * as step from "./steps";
 
+export interface IStepMappings {
+  [index: string]: (stepname: string) => Promise<any>;
+}
 // tslint:disable:object-literal-sort-keys
-export const givenStepMappings = {
+export const givenStepMappings: IStepMappings = {
   "I enter my name": step.iEnterMyName,
   "I navigate to the testcafe sample page": step.iNavigateToTheTestcafeSamplePage,
 };
 export type GivenStep = keyof typeof givenStepMappings;
 // tslint:disable:object-literal-sort-keys
-export const whenStepMappings = {
+export const whenStepMappings: IStepMappings = {
   "I enter my name": step.iEnterMyName,
   "I navigate to the testcafe sample page": step.iNavigateToTheTestcafeSamplePage,
   "I send my feedback on testcafe": step.iSendMyFeedbackOnTestcafe,
 };
 export type WhenStep = keyof typeof whenStepMappings;
 // tslint:disable:object-literal-sort-keys
-export const thenStepMappings = {
+export const thenStepMappings: IStepMappings = {
   "a 'Thank you' message should appear with my name": step.aXxxMessageShouldAppearWithMyName,
   "I can submit my feedback on testcafe": step.iCanSubmitMyFeedbackOnTestcafe,
   "I cannot submit my feedback on testcaf": step.iCannotSubmitMyFeedbackOnTestcafe,
   "no name should be populated": step.noNameShouldBePopulated,
 };
 export type ThenStep = keyof typeof thenStepMappings;
-export const butStepMappings = {};
+export const butStepMappings: IStepMappings = {};
 export type ButStep = keyof typeof butStepMappings;
