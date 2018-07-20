@@ -1,12 +1,12 @@
+import { getDirectoriesRecursivelyIn } from "../../tools/fs/get-directories-recursively-in";
+import { getFilesInDirectory } from "../../tools/fs/get-files-in-directory";
+import { ignoreDirThatIsIn } from "../../tools/fs/ignore-dir-that-is-in";
+import { ignoreDotDir } from "../../tools/fs/ignore-dot-dir";
+import { ignoreNodeModules } from "../../tools/fs/ignore-node-modules";
+import { isStepFile } from "../../tools/fs/is-step-file";
 import { config } from "../config";
 import { createStepsBarrel } from "./create-steps-barrel";
 import { createStepsMapping } from "./create-steps-mappings";
-import { getDirectoriesRecursivelyIn } from "./fs/get-directories-recursively-in";
-import { getFilesInDirectory } from "./fs/get-files-in-directory";
-import { ignoreDirThatIsIn } from "./fs/ignore-dir-that-is-in";
-import { ignoreDotDir } from "./fs/ignore-dot-dir";
-import { ignoreNodeModules } from "./fs/ignore-node-modules";
-import { isStepFile } from "./fs/is-step-file";
 
 const stepFiles: string[] = [];
 const folders = getDirectoriesRecursivelyIn(config.rootDirectory)

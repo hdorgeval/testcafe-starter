@@ -18,7 +18,7 @@
     "preinstall": "rimraf node_modules",
     "pretestcafe-static-analyser": "rimraf reports",
     "testcafe-static-analyser": "testcafe-static-analyser",
-    "build-step-mappings": "ts-node step-mappings/utils/build.ts"
+    "build-step-mappings": "ts-node step-mappings/generator"
   },
   "repository": {
     "type": "git",
