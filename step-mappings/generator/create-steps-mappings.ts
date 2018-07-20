@@ -72,7 +72,7 @@ function createStepMappingsFrom(stepFiles: string[]) {
         .sort(((a, b) => a.stepSentence.localeCompare(b.stepSentence)));
 
       if (stepMappings.length === 0) {
-        lines.push(`export const ${step}StepMappings: IStepMappings = {};`);
+        lines.push(`export const ${step}StepMappings = {};`);
         lines.push(
           // tslint:disable-next-line:max-line-length
           `export type ${upperCaseFirstLetter(step)}Step = keyof typeof ${step}StepMappings;`,
@@ -81,7 +81,7 @@ function createStepMappingsFrom(stepFiles: string[]) {
       }
 
       lines.push("// tslint:disable:object-literal-sort-keys");
-      lines.push(`export const ${step}StepMappings: IStepMappings = {`);
+      lines.push(`export const ${step}StepMappings = {`);
       stepMappings
           .map((stepMapping) => {
         lines.push(

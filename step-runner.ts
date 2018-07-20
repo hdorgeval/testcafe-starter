@@ -25,7 +25,7 @@ async function executeStep(
 export async function given(stepName: GivenStep) {
   await executeStep(stepName, givenStepMappings );
 }
-export async function when(stepName: GivenStep) {
+export async function when(stepName: WhenStep) {
   await executeStep(stepName, whenStepMappings);
 }
 export async function then(stepName: ThenStep) {
@@ -37,20 +37,20 @@ export async function but(stepName: ButStep) {
 export async function and(stepName: GivenStep | WhenStep | ThenStep | ButStep ) {
   ensureThat(stepName).isNotAmbiguous();
 
-  if (givenStepMappings[stepName]) {
+  if (givenStepMappings[stepName as GivenStep]) {
     return await given(stepName as GivenStep);
   }
 
-  if (whenStepMappings[stepName]) {
+  if (whenStepMappings[stepName as WhenStep]) {
     return await when(stepName as WhenStep);
   }
 
-  if (thenStepMappings[stepName]) {
+  if (thenStepMappings[stepName as ThenStep]) {
     return await then(stepName as ThenStep);
   }
 
-  if (butStepMappings[stepName]) {
-    return await but(stepName as ThenStep);
+  if (butStepMappings[stepName as ButStep]) {
+    return await but(stepName as ButStep);
   }
 
   throw new Error(`Step "${stepName}" is not mapped to an executable code.`);
@@ -60,13 +60,13 @@ export async function and(stepName: GivenStep | WhenStep | ThenStep | ButStep ) 
 function ensureThat(stepName: GivenStep | WhenStep | ThenStep | ButStep ) {
   return {
     isNotAmbiguous: () => {
-      if (givenStepMappings[stepName] && thenStepMappings[stepName] ) {
+      if (givenStepMappings[stepName as GivenStep] && thenStepMappings[stepName as ThenStep] ) {
         throw new Error(`Step "${stepName}" is defined as both a 'Given' and a 'Then' step.`);
       }
-      if (whenStepMappings[stepName] && thenStepMappings[stepName] ) {
+      if (whenStepMappings[stepName as WhenStep] && thenStepMappings[stepName as ThenStep] ) {
         throw new Error(`Step "${stepName}" is defined as both a 'When' and a 'Then' step.`);
       }
-      if (butStepMappings[stepName] && thenStepMappings[stepName] ) {
+      if (butStepMappings[stepName as ButStep] && thenStepMappings[stepName as ThenStep] ) {
         throw new Error(`Step "${stepName}" is defined as both a 'But' and a 'Then' step.`);
       }
     },
