@@ -9,6 +9,8 @@ import { getFuncNameFrom } from "./fs/get-func-name-from-file-name";
 import { getJsDocCommentsOf } from "./fs/get-jsdoc-of-function";
 import { getRelativePathOf } from "./fs/get-relative-path-from";
 import { slash } from "./fs/slash";
+import { surround } from "./string/surround-with-quote";
+import { upperCaseFirstLetter } from "./string/upper-case-first-letter";
 
 let exportIndex: number = -1;
 function nextIndex() {
@@ -55,16 +57,30 @@ function createStepMappingsFrom(stepFiles: string[]) {
   return {
     forStep: (step: string): string[] => {
       const lines: string[] = [];
+      const stepMappings = getStepMappingsFrom(stepFiles)
+        .forStep(step);
+      if (stepMappings.length === 0) {
+        lines.push(`export const ${step}StepMappings = {};`);
+        lines.push(
+          // tslint:disable-next-line:max-line-length
+          `export type ${upperCaseFirstLetter(step)}Step = keyof typeof ${step}StepMappings;`,
+        );
+        return lines;
+      }
+
       lines.push(`export const ${step}StepMappings = {`);
-      getStepMappingsFrom(stepFiles)
-          .forStep(step)
+      stepMappings
           .map((stepMapping) => {
         lines.push(
           // tslint:disable-next-line:max-line-length
-          `${config.tab}${config.quoteMark}${stepMapping.stepSentence}${config.quoteMark}: step.${stepMapping.stepFunc},`,
+          `${config.tab}${surround(stepMapping.stepSentence).with(config.quoteMark)}: step.${stepMapping.stepFunc},`,
         );
       });
       lines.push("};");
+      lines.push(
+        // tslint:disable-next-line:max-line-length
+        `export type ${upperCaseFirstLetter(step)}Step = keyof typeof ${step}StepMappings;`,
+      );
       return lines;
     },
   };

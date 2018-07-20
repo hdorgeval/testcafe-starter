@@ -18,8 +18,11 @@ const folders = getDirectoriesRecursivelyIn(config.rootDirectory)
 folders
   .map((path) => stepFiles.push(...getFilesInDirectory(path, (p) => p.endsWith(".ts") && isStepFile(p))));
 
+stepFiles.length > 0
 // tslint:disable-next-line:no-console
-console.log(`[build-step-mappings] found step files: \n${stepFiles.join("\n")}`);
+? console.log(`[build-step-mappings] found step files: \n${stepFiles.join("\n")}`)
+// tslint:disable-next-line:no-console
+: console.log("[build-step-mappings] no step found");
 
 createStepsBarrel(config.stepsBarrelFile)
   .from(stepFiles);
