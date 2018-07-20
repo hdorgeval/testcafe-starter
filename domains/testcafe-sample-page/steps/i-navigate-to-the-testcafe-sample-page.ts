@@ -2,6 +2,10 @@ import {t} from "testcafe";
 import {IConfig} from "../../../config/config.interface";
 import { getCurrentConfig } from "../../../config/testcafe-config";
 
+/**
+ * @step
+ * @given,@when("I navigate to the testcafe sample page")
+ */
 export default async (_: string) => {
   // get the config that was injected into the fixture/test context by the feature
   const config: IConfig = getCurrentConfig(t);

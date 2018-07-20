@@ -4,6 +4,10 @@ import {firstMatch} from "../../../tools/regex-match";
 import { IPageModel } from "../models";
 import * as selector from "../selectors";
 
+/**
+ * @step
+ * @then("a 'Thank you' message should appear with my name")
+ */
 export default async (stepName: string) => {
   // get the page object model that was injected in the context
   const inputData = t.ctx.inputData as IPageModel;

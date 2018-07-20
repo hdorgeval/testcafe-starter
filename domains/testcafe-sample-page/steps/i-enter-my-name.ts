@@ -4,6 +4,10 @@ import { getCurrentConfig } from "../../../config/testcafe-config";
 import { IPageModel } from "../models";
 import * as selector from "../selectors";
 
+/**
+ * @step
+ * @given,@when("I enter my name")
+ */
 export default async (_: string) => {
   // get the config that was injected into the fixture/test context by the feature
   const config: IConfig = getCurrentConfig(t);
