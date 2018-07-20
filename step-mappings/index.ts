@@ -22,7 +22,7 @@ export type WhenStep = keyof typeof whenStepMappings;
 export const thenStepMappings: IStepMappings = {
   "a 'Thank you' message should appear with my name": step.aXxxMessageShouldAppearWithMyName,
   "I can submit my feedback on testcafe": step.iCanSubmitMyFeedbackOnTestcafe,
-  "I cannot submit my feedback on testcaf": step.iCannotSubmitMyFeedbackOnTestcafe,
+  "I cannot submit my feedback on testcafe": step.iCannotSubmitMyFeedbackOnTestcafe,
   "no name should be populated": step.noNameShouldBePopulated,
 };
 export type ThenStep = keyof typeof thenStepMappings;
