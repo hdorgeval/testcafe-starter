@@ -59,7 +59,9 @@ function createStepMappingsFrom(stepFiles: string[]) {
     forStep: (step: string): string[] => {
       const lines: string[] = [];
       const stepMappings = getStepMappingsFrom(stepFiles)
-        .forStep(step);
+        .forStep(step)
+        .sort(((a, b) => a.stepSentence.localeCompare(b.stepSentence)));
+
       if (stepMappings.length === 0) {
         lines.push(`export const ${step}StepMappings = {};`);
         lines.push(
@@ -69,6 +71,7 @@ function createStepMappingsFrom(stepFiles: string[]) {
         return lines;
       }
 
+      lines.push("// tslint:disable:object-literal-sort-keys");
       lines.push(`export const ${step}StepMappings = {`);
       stepMappings
           .map((stepMapping) => {
