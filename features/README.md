@@ -1,6 +1,6 @@
 # Features
 
-This folder is, by convention, the place for the TestCafe test files.
+This folder is, by convention, the place for the TestCafe feature files.
 
 ## Creating a new test
 
@@ -11,18 +11,18 @@ This folder is, by convention, the place for the TestCafe test files.
 ```typescript
 import "testcafe";
 import { getCurrentConfig } from "../config/testcafe-config";
-import {defaultPageModel as inputData} from "../domains/testcafe-sample-page";
-import { env } from "../step-filters";
+import {pageModel} from "../domains/my-app";
+import { env } from "../step-filters/env";
 import {and, given, then, when} from "../step-runner";
 
 fixture(`Feature: my new feature`)
   .before(async (ctx) => {
-    // global config is injected in the fixture context
+    // inject global configuration in the fixture context
     ctx.config = getCurrentConfig();
   })
   .beforeEach(async (t) => {
-    // inject your page model in the test context
-    t.ctx.inputData = inputData;
+    // inject page model in the test context
+    t.ctx.inputData = pageModel;
   });
 
 test("Scenario: my new scenario", async () => {
@@ -31,13 +31,12 @@ test("Scenario: my new scenario", async () => {
   await  when("I send my form");
   await  then("I should receive a specific response");
 });
-
 ```
 
 This starter project has been designed to put the business at the center of the e2e strategy.
 
 The way you express the different steps should be aligned with the language used by the business and/or end-users.
-Take time to make your steps readable by those people.
+Take time to make your tests readable by those people.
 
 Visual Studio Code IntelliSense signals you these new steps are unknown:
 
