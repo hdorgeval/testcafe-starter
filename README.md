@@ -52,7 +52,7 @@ test("Scenario: send feedback", async () => {
 * add the following options to the TestCafe command-line `--env=xxx --user=yyy`
 * you can create any type of option on the command-line: see the [readme](config/README.md) in the [config](config) folder.
 
-## To create custom command-line options on top of TesCafe command-line options
+## To create custom command-line options on top of TestCafe command-line options
 * You can add any custom command-line options to the existing TestCafe command-line options. 
 * To do this, customize the content of [parsed-config.ts](config/parsed-config.ts).
 
