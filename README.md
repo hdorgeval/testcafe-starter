@@ -110,6 +110,9 @@ test("Scenario: send feedback", async () => {
 });
 ```
 
+![demo](./.media/demo2.gif)
+
+
 * to select another environment, just use the VS Code IntelliSense:
   ![available environments](./.media/screenshot04.png)
 
