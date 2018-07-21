@@ -4,7 +4,7 @@ This folder is, by convention, the place for step-mappings files.
 
 step-mappings is the glue between the step-definition files and the feature files.
 
-step-mappings also provide strong type-checking and Visual Studio Code IntelliSense when building steps in feature files.
+step-mappings also provide strong type-checking and Visual Studio Code IntelliSense when writing steps in feature files.
 
 ![demo](../.media/demo3.gif)
 
@@ -19,3 +19,5 @@ step-mappings files can be regenerated at any time by running the command:
 ```sh
 npm run build-step-mappings
 ```
+
+> **You MUST run this command each time you add/modify/delete a step-definition file.**
