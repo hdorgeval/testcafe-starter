@@ -127,7 +127,7 @@ test("Scenario: send feedback", async () => {
 });
 ```
 
-## To create an HTML overview of all tests
+## To create an HTML overview of all tests ( see [testcafe-static-analyser](https://github.com/hdorgeval/testcafe-static-analyser) )
 
 * run the command `testcafe-static-analyser`.
 * this module parses the source code of all your TestCafe tests and will produce an ouput like the following:
