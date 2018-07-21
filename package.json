@@ -1,6 +1,6 @@
 {
   "name": "testcafe-starter",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "starter project for e2e tests with testcafe",
   "main": "index.js",
   "scripts": {
