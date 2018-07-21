@@ -89,11 +89,12 @@ test("Scenario: send feedback", async () => {
 * Regex Previewer by Christof Marti
 * TestCafe Snippets
 
-  ## How to jump into the implementation of a step (Visual Studio Code)
-  * Go to the Command Palette with ⌘P (Ctrl+P on Windows)
-  * Start typing the sentence. For example `I send my feedback on testcafe`
-  * select the step file: 
-    ![find the step implementation](./.media/screenshot08.png)
+## How to jump into the implementation of a step (Visual Studio Code)
+
+* Go to the Command Palette with ⌘P (Ctrl+P on Windows)
+* Start typing the sentence. For example `I send my feedback on testcafe`
+* select the step file: 
+  ![find the step implementation](./.media/screenshot08.png)
 
 ## How to create a new feature file
 
