@@ -50,11 +50,11 @@ test("Scenario: send feedback", async () => {
 
 ## To configure the target environment and the target persona
 * add the following options to the TestCafe command-line `--env=xxx --user=yyy`
-* you can create any type of option on the command-line: see the [readme](config) in the [config](config) folder.
+* you can create any type of option on the command-line: see the [readme](config/README.md) in the [config](config) folder.
 
 ## To create custom command-line options on top of TesCafe command-line options
 * You can add any custom command-line options to the existing TestCafe command-line options. 
-* To do this, customize the content of [parsed-config.ts](parsed-config.ts).
+* To do this, customize the content of [parsed-config.ts](config/parsed-config.ts).
 
 ## To check for typescript and linting errors
 
@@ -95,9 +95,13 @@ test("Scenario: send feedback", async () => {
   * select the step file: 
     ![find the step implementation](./.media/screenshot08.png)
 
-## How to create a new test
+## How to create a new feature file
 
 * see the [readme](features/README.md)
+
+## How to create a new step-definition file
+
+* see the [readme](domains/testcafe-sample-page/README.md)
 
 ## How to run a test only in specific environment(s)
 

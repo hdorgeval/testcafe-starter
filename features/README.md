@@ -2,7 +2,7 @@
 
 This folder is, by convention, the place for the TestCafe feature files.
 
-## Creating a new test
+## Creating a new feature file
 
 * Create an empty TypeScript file and give it a name like `my-new-feature.spec.ts`
 
