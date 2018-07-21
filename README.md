@@ -87,7 +87,8 @@ test("Scenario: send feedback", async () => {
 * TSLint
 * Git Lens
 * Regex Previewer by Christof Marti
-* TestCafe Snippets
+* TestCafe Snippets (see [say goodbye to flakyness](https://github.com/hdorgeval/testcafe-snippets))
+* TestCafe Test Runner (see [How to execute a test from Visual Studio Code IDE](#How-to-execute-a-test-from-Visual-Studio-Code-IDE))
 
 ## How to jump into the implementation of a step (Visual Studio Code)
 
@@ -153,3 +154,17 @@ test("Scenario: send feedback", async () => {
 ![report](.media/static-reporter3.png)
 
 ![report](.media/static-reporter4.png)
+
+
+## How to execute a test from Visual Studio Code IDE
+
+To start a test from the IDE you need to install the Visual Studio Code extension [TestCafe Test Runner](https://github.com/romanresh/vscode-testcafe).
+
+
+### To run a specific test
+
+Right-click on the test and and select TestCafe: Run Test(s) in... for the required browser.
+
+### To run all tests in a feature file
+
+Right-click on the feature file within the Explorer panel and select TestCafe: Run Test(s) in... for the required browser.
