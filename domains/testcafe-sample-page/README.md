@@ -7,42 +7,71 @@ By convention, step definition files are organized in the following way:
 * the `models` folder contains the definition for all the page/view/data models you want to use at runtime;
 * the `selectors` folder contains the definitions for all TestCafe Selectors you will need at runtime;
 * the `steps` folder contains the implementation of each steps;
-* the `given-when-then-mappings.ts` file contains the mapping between step names and implementation;
-* the `index.ts` file gathers all items exposed by the domain:
-  * step names; 
-  * mappings;
-  * object models.
+* the `index.ts` file gathers all items exposed by the domain.
 
   ## Creating a new step
 
-  * Open the `given-when-then-mappings.ts` file in the VS Code editor.
-    * If you need to create a new `given` or `when` step, add a new entry in the `givenStepMappings` literal object
-    * For a `then` step, add a new entry in the `thenStepMappings` literal object
-    * map each new step to the "not implemented" step:
-    ```typescript
-    export const givenStepMappings = {
-      // code omitted for brevity
-      "I input the given data": step.not_implemented_step,
-      "I send my form": step.not_implemented_step,
-      "I start my App": step.not_implemented_step,
-    };
+  Let's say you want to create a step-definition file for the sentence `When I do something specific`.
 
-    export const thenStepMappings = {
-      // code omitted for brevity
-      "I should receive a specific response": step.not_implemented_step,
-    };
-    ```
-    * check, in the feature file, that all created steps are now recognized by Visual Studio Code IntelliSense
-    * set the `test` to `test.only` and run the test. 
-    * check the test fails with the following message:
-      ![not yet implemented](../../.media/screenshot03.png)
+  * Create a new empty file in the `steps` folder and name it `i-do-something-specific.ts`.
+  * Consider using the kebab-case naming convention in order to quickly find the implementation associated to the step through the Command Palette:
+    ![find the step implementation](../../.media/screenshot05.png)
+  
+  * Copy, in this new file, the content of the [basic template step definition file](../../step-templates/basic-template-step.ts) or the content of the [not implemented step definition file](../../step-templates/not-implemented-step.ts);
 
-    * it's time now to write the real step implementation:
-      * create a new empty file in the `steps` folders.
-      * give this file the same name as the step name 
-      * consider using the kebab-case naming convention in order to quickly find the implementation associated to a given step through the Command Palette:
-        ![find the step implementation](../../.media/screenshot05.png)
+  * Adapt the jsDoc comments:
+```js
+/**
+ * @step
+ * @when("I do something specific")
+ */
+  ```
 
-    
+  * If the statement should be available as a `Given` **and** a `When` step, the jsDocs comments should be:
+
+```js
+/**
+ * @step
+ * @given,@when("I do something specific")
+ */
+  ```
+
+  * If the same step-definition must be re-used for different statements, the jsDocs comments should be (see [this step implementation](./steps/a-xxx-message-should-appear-with-my-name.ts) for more details):
+
+```js
+/**
+ * @step
+ * @given,@when("I do something specific")
+ * @when("I set the user name as 'john doe'")
+ * @when("I set the user name as 'Perry Scope'")
+ * @when("I set the user name as 'Art Decco'")
+ */
+  ```
+
+  * for a `Then` step:
+
+```js
+/**
+ * @step
+ * @then("I do something specific")
+ */
+  ```
+
+  * for a `But` step:
+```js
+/**
+ * @step
+ * @but("I do something specific")
+ */
+  ```
 
 
+* Save the new step-definition file and run the following command in a terminal window:
+
+```sh
+npm run build-step-mappings
+```
+
+* now go back to the feature file. The sentence should be available in the intellisense:
+
+![demo](../../.media/screenshot09.png)

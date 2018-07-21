@@ -3,6 +3,7 @@
 export { default as aXxxMessageShouldAppearWithMyName } from "../domains/testcafe-sample-page/steps/a-xxx-message-should-appear-with-my-name";
 export { default as iCanSubmitMyFeedbackOnTestcafe } from "../domains/testcafe-sample-page/steps/i-can-submit-my-feedback-on-testcafe";
 export { default as iCannotSubmitMyFeedbackOnTestcafe } from "../domains/testcafe-sample-page/steps/i-cannot-submit-my-feedback-on-testcafe";
+export { default as iDoSomethingSpecific } from "../domains/testcafe-sample-page/steps/i-do-something-specific";
 export { default as iEnterMyName } from "../domains/testcafe-sample-page/steps/i-enter-my-name";
 export { default as iNavigateToTheTestcafeSamplePage } from "../domains/testcafe-sample-page/steps/i-navigate-to-the-testcafe-sample-page";
 export { default as iSendMyFeedbackOnTestcafe } from "../domains/testcafe-sample-page/steps/i-send-my-feedback-on-testcafe";

@@ -13,6 +13,7 @@ export const givenStepMappings = {
 export type GivenStep = keyof typeof givenStepMappings;
 // tslint:disable:object-literal-sort-keys
 export const whenStepMappings = {
+  "I do something specific": step.iDoSomethingSpecific,
   "I enter my name": step.iEnterMyName,
   "I navigate to the testcafe sample page": step.iNavigateToTheTestcafeSamplePage,
   "I send my feedback on testcafe": step.iSendMyFeedbackOnTestcafe,
