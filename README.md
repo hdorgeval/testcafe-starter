@@ -88,7 +88,7 @@ test("Scenario: send feedback", async () => {
 * Git Lens
 * Regex Previewer by Christof Marti
 * TestCafe Snippets (see [say goodbye to flakyness](https://github.com/hdorgeval/testcafe-snippets))
-* TestCafe Test Runner (see [How to execute a test from Visual Studio Code IDE](##How-to-execute-a-test-from-Visual-Studio-Code-IDE) )
+* TestCafe Test Runner (see [How to execute a test from Visual Studio Code IDE](#how-to-execute-a-test-from-visual-studio-code-ide))
 
 ## How to jump into the implementation of a step (Visual Studio Code)
 
