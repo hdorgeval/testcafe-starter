@@ -1,5 +1,5 @@
 import * as minimist from "minimist";
-import { IConfig, ITestcafeOptions } from "./config.interface";
+import { IConfig, ITimeout } from "./config.interface";
 import { env } from "./environments";
 import { user } from "./personas";
 
@@ -13,37 +13,23 @@ const config = {
 
 // get the option --testSpeed=xxx from the command line
 if (args && args.testSpeed) {
-  config.testcafe = {
-    testSpeed: Number(args.testSpeed),
-  } as ITestcafeOptions;
+  config.testSpeed = Number(args.testSpeed);
 }
+config.timeout = {} as ITimeout;
 
 // get the option --longTimeout=xxx from the command line
 if (args && args.longTimeout) {
-  config.testcafe = {
-    ...config.testcafe,
-    timeout: {
-      ...(config.testcafe
-        ? config.testcafe.timeout
-        : {}
-      ),
-      longTimeout: Number(args.longTimeout),
-    },
-  } as ITestcafeOptions;
+  config.timeout = {
+    longTimeout: args.longTimeout,
+  } as ITimeout;
 }
 
 // get the option --shortTimeout=xxx from the command line
 if (args && args.shortTimeout) {
-  config.testcafe = {
-    ...config.testcafe,
-    timeout: {
-      ...(config.testcafe
-        ? config.testcafe.timeout
-        : {}
-      ),
-      shortTimeout: Number(args.shortTimeout),
-    },
-  } as ITestcafeOptions;
+  config.timeout = {
+    ...config.timeout,
+    shortTimeout: args.shortTimeout,
+  } as ITimeout;
 }
 
 export const parsedConfig = config;

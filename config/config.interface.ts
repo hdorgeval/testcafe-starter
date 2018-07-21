@@ -4,12 +4,9 @@ import { IUserInfo } from "./personas";
 export interface IConfig {
   env: IEnvInfo;
   user: IUserInfo;
-  testcafe: ITestcafeOptions;
-}
-
-export interface ITestcafeOptions {
   testSpeed: number;
   timeout: ITimeout;
+  showConfig: boolean;
 }
 
 export interface ITimeout {

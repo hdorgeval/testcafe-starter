@@ -22,7 +22,7 @@ export default async (stepName: string) => {
 
   const myName = inputData.name || "";
   await t
-    .expect(selector.resultContent.exists).ok({timeout: config.testcafe.timeout.longTimeout})
+    .expect(selector.resultContent.exists).ok({timeout: config.timeout.longTimeout})
     .expect(selector.resultContent.innerText).contains(message)
     .expect(selector.resultContent.innerText).contains(myName);
 

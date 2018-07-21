@@ -5,6 +5,10 @@ import { IPageModel } from "../domains/testcafe-sample-page/models";
 import * as selector from "../domains/testcafe-sample-page/selectors";
 import {firstMatch} from "../tools/regex-match";
 
+/**
+ * @step
+ * @given("I do something")
+ */
 export default async (stepName: string) => {
   // get the config that was injected into the fixture context by the feature
   const config: IConfig = getCurrentConfig(t);
@@ -23,17 +27,17 @@ export default async (stepName: string) => {
   // to help you write your tests
 
   await t
-    .setTestSpeed(config.testcafe.testSpeed)
+    .setTestSpeed(config.testSpeed)
     .hover(selector.firstInputBox)
-    .expect(selector.firstInputBox.hasAttribute("disabled")).notOk({timeout: config.testcafe.timeout.longTimeout})
+    .expect(selector.firstInputBox.hasAttribute("disabled")).notOk({timeout: config.timeout.longTimeout})
     .typeText(selector.firstInputBox, value, {replace: true})
     .pressKey("tab");
 
   if (inputData.name) {
     await t
-      .setTestSpeed(config.testcafe.testSpeed)
+      .setTestSpeed(config.testSpeed)
       .hover(selector.secondInputBox)
-      .expect(selector.secondInputBox.hasAttribute("disabled")).notOk({timeout: config.testcafe.timeout.longTimeout})
+      .expect(selector.secondInputBox.hasAttribute("disabled")).notOk({timeout: config.timeout.longTimeout})
       .typeText(selector.secondInputBox, inputData.name, {replace: true})
       .pressKey("tab");
   }

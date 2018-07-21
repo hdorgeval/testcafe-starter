@@ -12,8 +12,8 @@ export default async (_: string) => {
   const config: IConfig = getCurrentConfig(t);
 
   await t
-    .setTestSpeed(config.testcafe.testSpeed)
+    .setTestSpeed(config.testSpeed)
     .hover(selector.submitButton)
-    .expect(selector.submitButton.hasAttribute("disabled")).notOk({timeout: config.testcafe.timeout.longTimeout})
+    .expect(selector.submitButton.hasAttribute("disabled")).notOk({timeout: config.timeout.longTimeout})
     .click(selector.submitButton);
 };

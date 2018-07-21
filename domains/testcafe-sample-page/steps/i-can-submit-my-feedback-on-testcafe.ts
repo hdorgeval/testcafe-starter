@@ -11,5 +11,5 @@ export default async (_: string) => {
   const config = getCurrentConfig(t);
   await t
     .expect(selector.submitButton.hasAttribute("disabled"))
-      .notOk({timeout: config.testcafe.timeout.longTimeout});
+      .notOk({timeout: config.timeout.longTimeout});
 };

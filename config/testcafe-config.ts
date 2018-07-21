@@ -17,20 +17,22 @@ if (parsedConfig && parsedConfig.env) {
 if (parsedConfig && parsedConfig.user) {
   config.user = parsedConfig.user;
 }
-if (parsedConfig && parsedConfig.testcafe && parsedConfig.testcafe.testSpeed) {
-  config.testcafe.testSpeed = parsedConfig.testcafe.testSpeed;
+if (parsedConfig && parsedConfig.testSpeed) {
+  config.testSpeed = parsedConfig.testSpeed;
 }
 
-if (parsedConfig && parsedConfig.testcafe && parsedConfig.testcafe.timeout) {
-  config.testcafe.timeout = {
-    ...config.testcafe.timeout,
-    ...parsedConfig.testcafe.timeout,
+if (parsedConfig && parsedConfig.timeout) {
+  config.timeout = {
+    ...config.timeout,
+    ...parsedConfig.timeout,
   };
 }
 
-// tslint:disable-next-line:no-console
-console.log("Tests will run with the following global configuration: ");
-jsome(config);
+if (config.showConfig) {
+  // tslint:disable-next-line:no-console
+  console.log("Tests will run with the following global configuration: ");
+  jsome(config);
+}
 
 export default config;
 

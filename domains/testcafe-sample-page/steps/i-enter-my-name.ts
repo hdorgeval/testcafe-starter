@@ -18,7 +18,7 @@ export default async (_: string) => {
   const value = inputData.name || "";
 
   await t
-    .setTestSpeed(config.testcafe.testSpeed)
+    .setTestSpeed(config.testSpeed)
     .hover(selector.userNameInputBox)
     .expect(selector.userNameInputBox.hasAttribute("disabled")).notOk()
     .click(selector.userNameInputBox)
