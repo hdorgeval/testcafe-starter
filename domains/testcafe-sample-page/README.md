@@ -4,8 +4,8 @@ This folder is, by convention, the place for all files related to the TestCafe S
 
 By convention files are organized in the following way:
 
-* the `models` folder contains the definition for all the page/view/data models you want to use at runtime;
-* the `selectors` folder contains the definitions for all TestCafe Selectors you will need at runtime;
+* the `models` folder contains the definition for all the page/view/data models;
+* the `selectors` folder contains the definitions for all TestCafe Selectors;
 * the `steps` folder contains the implementation of each steps;
 * the `index.ts` file gathers all items exposed by the domain and needed inside the TestCafe feature files.
   
@@ -14,12 +14,15 @@ By convention files are organized in the following way:
 Let's say you want to create a step-definition file for the sentence `When I do something specific`.
 
   * Create a new empty file in the `steps` folder and name it `i-do-something-specific.ts`.
+
   * Consider using the kebab-case naming convention in order to quickly find the implementation associated to the step through the Command Palette:
+
     ![find the step implementation](../../.media/screenshot05.png)
   
   * Copy, in this new file, the content of the [basic template step definition file](../../step-templates/basic-template-step.ts) or the content of the [not implemented step definition file](../../step-templates/not-implemented-step.ts);
 
   * Adapt the jsDoc comments:
+
 ```js
 /**
  * @step
@@ -72,6 +75,6 @@ Let's say you want to create a step-definition file for the sentence `When I do 
 npm run build-step-mappings
 ```
 
-* now go back to the feature file. The sentence should be available in the intellisense:
+* Now go back to the feature file. The sentence should be available in the intellisense:
 
 ![demo](../../.media/screenshot09.png)
