@@ -12,7 +12,7 @@ This project offers you a filter mechanism for handling execution environment: s
 
 A step-filter is technically the same as a given/when/then step.
 
-When a step-filter executes it should only finish it's execution with either:
+When a step-filter executes it should finish it's execution with either:
 
 ```js
 import {t} from "testcafe";
