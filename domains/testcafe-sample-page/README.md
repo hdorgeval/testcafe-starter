@@ -1,17 +1,17 @@
 # TestCafe Sample Page Domain
 
-This folder is, by convention, the place for all step definition files related to the TestCafe Sample Page.
+This folder is, by convention, the place for all files related to the TestCafe Sample Page application.
 
-By convention, step definition files are organized in the following way:
+By convention files are organized in the following way:
 
 * the `models` folder contains the definition for all the page/view/data models you want to use at runtime;
 * the `selectors` folder contains the definitions for all TestCafe Selectors you will need at runtime;
 * the `steps` folder contains the implementation of each steps;
-* the `index.ts` file gathers all items exposed by the domain.
+* the `index.ts` file gathers all items exposed by the domain and needed inside the TestCafe feature files.
+  
+## Creating a new step
 
-  ## Creating a new step
-
-  Let's say you want to create a step-definition file for the sentence `When I do something specific`.
+Let's say you want to create a step-definition file for the sentence `When I do something specific`.
 
   * Create a new empty file in the `steps` folder and name it `i-do-something-specific.ts`.
   * Consider using the kebab-case naming convention in order to quickly find the implementation associated to the step through the Command Palette:
@@ -27,7 +27,7 @@ By convention, step definition files are organized in the following way:
  */
   ```
 
-  * If the statement should be available as a `Given` **and** a `When` step, the jsDocs comments should be:
+  * If the statement should be available as a `Given` **and** a `When` step, the JSDoc comments should be:
 
 ```js
 /**
@@ -36,7 +36,7 @@ By convention, step definition files are organized in the following way:
  */
   ```
 
-  * If the same step-definition must be re-used for different statements, the jsDocs comments should be (see [this step implementation](./steps/a-xxx-message-should-appear-with-my-name.ts) for more details):
+  * If the same step-definition must be re-used for different statements, the JSDoc comments should be (see [this step implementation](./steps/a-xxx-message-should-appear-with-my-name.ts) for more details):
 
 ```js
 /**
