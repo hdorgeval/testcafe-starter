@@ -6,7 +6,7 @@ A step-filter is a mechanism that enables to dynamically stop the execution of t
 
 A test might be stopped because it is not running in the right environment, or because the persona setup in the configuration file must not run this test.
 
-This project offers you a filter mechanism for handling execution environment: see [env.ts](env.ts) and [this](../README.md#How-to-run-a-test-only-in-specific-environment(s)).
+This project offers you a filter mechanism for handling execution environment: see [env.ts](env.ts) and [this](../README.md#How-to-run-a-test-only-in-specific-environment).
 
 ## How it works
 
