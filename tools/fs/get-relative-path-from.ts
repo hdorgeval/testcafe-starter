@@ -3,9 +3,15 @@ import { getFileName } from './get-filename';
 import { isFile } from './is-file';
 
 export const getRelativePathOf = (fileOrFolderPath: string) => {
-  const toFolder: string = isFile(fileOrFolderPath) ? dirname(fileOrFolderPath) : fileOrFolderPath;
+  /* prettier-ignore */
+  const toFolder: string = isFile(fileOrFolderPath) 
+    ? dirname(fileOrFolderPath) 
+    : fileOrFolderPath;
 
-  const toFilename = isFile(fileOrFolderPath) ? getFileName(fileOrFolderPath) : undefined;
+  /* prettier-ignore */
+  const toFilename = isFile(fileOrFolderPath) 
+    ? getFileName(fileOrFolderPath) 
+    : undefined;
 
   return {
     from: (originFileOrFolderPath: string) => {
@@ -14,7 +20,11 @@ export const getRelativePathOf = (fileOrFolderPath: string) => {
         : originFileOrFolderPath;
 
       const relativeFolderPath = relative(fromFolder, toFolder) || '.';
-      const result = toFilename ? `${relativeFolderPath}${sep}${toFilename}` : relativeFolderPath;
+
+      /* prettier-ignore */
+      const result = toFilename 
+        ? `${relativeFolderPath}${sep}${toFilename}` 
+        : relativeFolderPath;
 
       return result;
     },
