@@ -1,10 +1,10 @@
 export const personas: IUserInfo[] = [
-  {name: "user 1", login: "user1@example.com", password: "user1" },
-  {name: "user 2", login: "user2@example.com", password: "user2" },
-  {name: "user 3", login: "user3@example.com", password: "user3" },
+  { name: 'user 1', login: 'user1@example.com', password: 'user1' },
+  { name: 'user 2', login: 'user2@example.com', password: 'user2' },
+  { name: 'user 3', login: 'user3@example.com', password: 'user3' },
 ];
 
-const userLogins: string[] = personas.map( (p) => p.login);
+const userLogins: string[] = personas.map((p) => p.login);
 
 export function user(login: Email | undefined): IUserInfo | undefined {
   if (login === undefined) {
@@ -13,7 +13,7 @@ export function user(login: Email | undefined): IUserInfo | undefined {
     (You can optionnaly add to the testcafe command-line the option: --user=${userLogins[0]})`);
     return undefined;
   }
-  const foundUser = personas.filter( (p) => p.login === login)[0];
+  const foundUser = personas.filter((p) => p.login === login)[0];
   if (foundUser) {
     return foundUser;
   }
@@ -28,7 +28,4 @@ export interface IUserInfo {
   password?: string;
 }
 
-export type Email =
-| "user1@example.com"
-| "user2@example.com"
-| "user3@example.com";
+export type Email = 'user1@example.com' | 'user2@example.com' | 'user3@example.com';

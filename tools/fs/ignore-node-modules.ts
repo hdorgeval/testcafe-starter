@@ -1,1 +1,1 @@
-export const ignoreNodeModules = (path: string) => path.indexOf("node_modules") < 0;
+export const ignoreNodeModules = (path: string) => path.indexOf('node_modules') < 0;

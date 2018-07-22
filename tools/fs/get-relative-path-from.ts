@@ -1,15 +1,11 @@
-import { dirname, relative, sep } from "path";
-import { getFileName } from "./get-filename";
-import { isFile } from "./is-file";
+import { dirname, relative, sep } from 'path';
+import { getFileName } from './get-filename';
+import { isFile } from './is-file';
 
 export const getRelativePathOf = (fileOrFolderPath: string) => {
-  const toFolder: string = isFile(fileOrFolderPath)
-    ? dirname(fileOrFolderPath)
-    : fileOrFolderPath;
+  const toFolder: string = isFile(fileOrFolderPath) ? dirname(fileOrFolderPath) : fileOrFolderPath;
 
-  const toFilename = isFile(fileOrFolderPath)
-    ? getFileName(fileOrFolderPath)
-    : undefined;
+  const toFilename = isFile(fileOrFolderPath) ? getFileName(fileOrFolderPath) : undefined;
 
   return {
     from: (originFileOrFolderPath: string) => {
@@ -17,10 +13,8 @@ export const getRelativePathOf = (fileOrFolderPath: string) => {
         ? dirname(originFileOrFolderPath)
         : originFileOrFolderPath;
 
-      const relativeFolderPath = relative(fromFolder, toFolder) || ".";
-      const result = toFilename
-        ? `${relativeFolderPath}${sep}${toFilename}`
-        : relativeFolderPath;
+      const relativeFolderPath = relative(fromFolder, toFolder) || '.';
+      const result = toFilename ? `${relativeFolderPath}${sep}${toFilename}` : relativeFolderPath;
 
       return result;
     },

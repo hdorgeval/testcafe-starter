@@ -1,6 +1,6 @@
-import { PathLike, readdirSync  } from "fs";
-import { join } from "path";
-import { isDirectory } from "./is-directory";
+import { PathLike, readdirSync } from 'fs';
+import { join } from 'path';
+import { isDirectory } from './is-directory';
 
 export const getDirectoriesIn = (path: PathLike) => {
   const result = readdirSync(path)
@@ -27,5 +27,4 @@ export class FluentSyntaxForDirectoryFiltering {
     this.filteredResults = [...this.filteredResults].filter(filter);
     return this;
   }
-
 }

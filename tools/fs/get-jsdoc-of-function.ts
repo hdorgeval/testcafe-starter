@@ -1,8 +1,8 @@
-import { IFuncInfo } from "./get-exported-functions-in";
-import { readAllLinesInFile } from "./read-all-lines-in-file";
+import { IFuncInfo } from './get-exported-functions-in';
+import { readAllLinesInFile } from './read-all-lines-in-file';
 
-const LAST_LINE_OF_JSDOC = "*/";
-const FIRST_LINE_OF_JSODC = "/**";
+const LAST_LINE_OF_JSDOC = '*/';
+const FIRST_LINE_OF_JSODC = '/**';
 export const getJsDocCommentsOf = (funcInfo: IFuncInfo): string[] => {
   const lineNumberOfFunctionDeclaration = funcInfo.lineNumber - 1;
   if (lineNumberOfFunctionDeclaration <= 0) {
@@ -14,8 +14,7 @@ export const getJsDocCommentsOf = (funcInfo: IFuncInfo): string[] => {
   }
   const functionDaclarationLine = allLines[lineNumberOfFunctionDeclaration];
   if (
-    (functionDaclarationLine.includes("export") &&
-    functionDaclarationLine.includes(funcInfo.functionName)) === false
+    (functionDaclarationLine.includes('export') && functionDaclarationLine.includes(funcInfo.functionName)) === false
   ) {
     return [];
   }
@@ -24,7 +23,7 @@ export const getJsDocCommentsOf = (funcInfo: IFuncInfo): string[] => {
     .filter((_, index) => index < lineNumberOfFunctionDeclaration)
     .map((line) => line.trim())
     .filter((line) => line.length > 0)
-    .filter((line) => line.startsWith("//") === false);
+    .filter((line) => line.startsWith('//') === false);
 
   const firstLineAboveFunctionDeclaration = lines.pop();
   if (firstLineAboveFunctionDeclaration !== LAST_LINE_OF_JSDOC) {

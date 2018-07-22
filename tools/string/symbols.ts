@@ -1,4 +1,4 @@
 export const symbols = {
-  err: "✖",
-  ok: "✓",
+  err: '✖',
+  ok: '✓',
 };

@@ -1,2 +1,2 @@
 // tslint:disable-next-line:no-var-requires
-export const slash: (path: string) => string = require("slash");
+export const slash: (path: string) => string = require('slash');

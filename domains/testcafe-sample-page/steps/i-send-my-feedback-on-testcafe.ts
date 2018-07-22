@@ -1,7 +1,7 @@
-import {t} from "testcafe";
-import {IConfig} from "../../../config/config.interface";
-import { getCurrentConfig } from "../../../config/testcafe-config";
-import * as selector from "../selectors";
+import { t } from 'testcafe';
+import { IConfig } from '../../../config/config.interface';
+import { getCurrentConfig } from '../../../config/testcafe-config';
+import * as selector from '../selectors';
 
 /**
  * @step
@@ -14,6 +14,7 @@ export default async (_: string) => {
   await t
     .setTestSpeed(config.testSpeed)
     .hover(selector.submitButton)
-    .expect(selector.submitButton.hasAttribute("disabled")).notOk({timeout: config.timeout.longTimeout})
+    .expect(selector.submitButton.hasAttribute('disabled'))
+    .notOk({ timeout: config.timeout.longTimeout })
     .click(selector.submitButton);
 };

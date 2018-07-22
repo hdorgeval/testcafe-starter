@@ -1,8 +1,8 @@
-import {t} from "testcafe";
-import { IConfig } from "../../../config/config.interface";
-import { getCurrentConfig } from "../../../config/testcafe-config";
-import { IPageModel } from "../models";
-import * as selector from "../selectors";
+import { t } from 'testcafe';
+import { IConfig } from '../../../config/config.interface';
+import { getCurrentConfig } from '../../../config/testcafe-config';
+import { IPageModel } from '../models';
+import * as selector from '../selectors';
 
 /**
  * @step
@@ -15,13 +15,14 @@ export default async (_: string) => {
   // get the page object model that was injected in the context
   const inputData = t.ctx.inputData as IPageModel;
 
-  const value = inputData.name || "";
+  const value = inputData.name || '';
 
   await t
     .setTestSpeed(config.testSpeed)
     .hover(selector.userNameInputBox)
-    .expect(selector.userNameInputBox.hasAttribute("disabled")).notOk()
+    .expect(selector.userNameInputBox.hasAttribute('disabled'))
+    .notOk()
     .click(selector.userNameInputBox)
-    .typeText(selector.userNameInputBox, value, {replace: true})
-    .pressKey("tab");
+    .typeText(selector.userNameInputBox, value, { replace: true })
+    .pressKey('tab');
 };

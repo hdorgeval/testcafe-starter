@@ -1,5 +1,5 @@
 export const pageModel = {
-  name: "john doe",
+  name: 'john doe',
 } as IPageModel;
 
 export interface IPageModel {

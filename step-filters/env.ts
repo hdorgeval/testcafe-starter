@@ -1,16 +1,16 @@
-import {t} from "testcafe";
-import { IConfig } from "../config/config.interface";
-import { TargetEnvironnement } from "../config/environments";
-import { getCurrentConfig } from "../config/testcafe-config";
-import chalk from "../node_modules/chalk";
+import { t } from 'testcafe';
+import { IConfig } from '../config/config.interface';
+import { TargetEnvironnement } from '../config/environments';
+import { getCurrentConfig } from '../config/testcafe-config';
+import chalk from '../node_modules/chalk';
 
 export const env = {
   only: async (...targets: TargetEnvironnement[]) => {
     const config: IConfig = getCurrentConfig(t);
     if (config.env === undefined) {
-      throw new Error("The env property in the configuration file is not defined.");
+      throw new Error('The env property in the configuration file is not defined.');
     }
-    if (config.env.name === "any") {
+    if (config.env.name === 'any') {
       // filters are bypassed if the environment in the configuration file is any
       t.ctx.canExecute = true;
       return;
@@ -23,7 +23,7 @@ export const env = {
       if (config.env.name === target) {
         t.ctx.canExecute = true;
       }
-      if (target === "any") {
+      if (target === 'any') {
         t.ctx.canExecute = true;
       }
     }

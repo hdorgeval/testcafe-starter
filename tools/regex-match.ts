@@ -3,7 +3,7 @@ export function firstMatch(regex: RegExp, value: string): string | null {
   if (match === null) {
     return null;
   }
-  const result = match[0].replace(/'/gi, "");
+  const result = match[0].replace(/'/gi, '');
   return result;
 }
 export function secondMatch(regex: RegExp, value: string): string | null {
@@ -11,6 +11,6 @@ export function secondMatch(regex: RegExp, value: string): string | null {
   if (match === null) {
     return null;
   }
-  const result = match[1].replace(/'/gi, "");
+  const result = match[1].replace(/'/gi, '');
   return result;
 }

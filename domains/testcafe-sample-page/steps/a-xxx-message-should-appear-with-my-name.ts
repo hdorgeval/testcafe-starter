@@ -1,8 +1,8 @@
-import {t} from "testcafe";
-import { getCurrentConfig } from "../../../config/testcafe-config";
-import {firstMatch} from "../../../tools/regex-match";
-import { IPageModel } from "../models";
-import * as selector from "../selectors";
+import { t } from 'testcafe';
+import { getCurrentConfig } from '../../../config/testcafe-config';
+import { firstMatch } from '../../../tools/regex-match';
+import { IPageModel } from '../models';
+import * as selector from '../selectors';
 
 /**
  * @step
@@ -20,10 +20,12 @@ export default async (stepName: string) => {
     throw new Error(`Cannot extract message from the step name "${stepName}"`);
   }
 
-  const myName = inputData.name || "";
+  const myName = inputData.name || '';
   await t
-    .expect(selector.resultContent.exists).ok({timeout: config.timeout.longTimeout})
-    .expect(selector.resultContent.innerText).contains(message)
-    .expect(selector.resultContent.innerText).contains(myName);
-
+    .expect(selector.resultContent.exists)
+    .ok({ timeout: config.timeout.longTimeout })
+    .expect(selector.resultContent.innerText)
+    .contains(message)
+    .expect(selector.resultContent.innerText)
+    .contains(myName);
 };

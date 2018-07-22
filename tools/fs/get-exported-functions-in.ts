@@ -1,5 +1,5 @@
-import { PathLike } from "fs";
-import { readAllLinesInFile } from "./read-all-lines-in-file";
+import { PathLike } from 'fs';
+import { readAllLinesInFile } from './read-all-lines-in-file';
 
 export const getExportedFunctionsIn = (filePath: PathLike): IFuncInfo[] => {
   try {
@@ -7,14 +7,13 @@ export const getExportedFunctionsIn = (filePath: PathLike): IFuncInfo[] => {
     const lines = readAllLinesInFile(filePath);
     const module = require(filePath.toString());
     for (const key in module) {
-      if (module.hasOwnProperty(key) && typeof module[key] === "function") {
-        const lineNumber = 1 + lines.findIndex((line) => line.includes("export ") && line.includes(key));
+      if (module.hasOwnProperty(key) && typeof module[key] === 'function') {
+        const lineNumber = 1 + lines.findIndex((line) => line.includes('export ') && line.includes(key));
         const functionName = key;
-        results.push({functionName, lineNumber, filePath});
+        results.push({ functionName, lineNumber, filePath });
       }
     }
     return results;
-
   } catch (error) {
     return [];
   }

@@ -1,9 +1,9 @@
-import {t} from "testcafe";
-import {IConfig} from "../config/config.interface";
-import { getCurrentConfig } from "../config/testcafe-config";
-import { IPageModel } from "../domains/testcafe-sample-page/models";
-import * as selector from "../domains/testcafe-sample-page/selectors";
-import {firstMatch} from "../tools/regex-match";
+import { t } from 'testcafe';
+import { IConfig } from '../config/config.interface';
+import { getCurrentConfig } from '../config/testcafe-config';
+import { IPageModel } from '../domains/testcafe-sample-page/models';
+import * as selector from '../domains/testcafe-sample-page/selectors';
+import { firstMatch } from '../tools/regex-match';
 
 /**
  * @step
@@ -29,17 +29,18 @@ export default async (stepName: string) => {
   await t
     .setTestSpeed(config.testSpeed)
     .hover(selector.firstInputBox)
-    .expect(selector.firstInputBox.hasAttribute("disabled")).notOk({timeout: config.timeout.longTimeout})
-    .typeText(selector.firstInputBox, value, {replace: true})
-    .pressKey("tab");
+    .expect(selector.firstInputBox.hasAttribute('disabled'))
+    .notOk({ timeout: config.timeout.longTimeout })
+    .typeText(selector.firstInputBox, value, { replace: true })
+    .pressKey('tab');
 
   if (inputData.name) {
     await t
       .setTestSpeed(config.testSpeed)
       .hover(selector.secondInputBox)
-      .expect(selector.secondInputBox.hasAttribute("disabled")).notOk({timeout: config.timeout.longTimeout})
-      .typeText(selector.secondInputBox, inputData.name, {replace: true})
-      .pressKey("tab");
+      .expect(selector.secondInputBox.hasAttribute('disabled'))
+      .notOk({ timeout: config.timeout.longTimeout })
+      .typeText(selector.secondInputBox, inputData.name, { replace: true })
+      .pressKey('tab');
   }
-
 };

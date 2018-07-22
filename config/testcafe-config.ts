@@ -1,10 +1,10 @@
-import "testcafe";
-import {IConfig} from "./config.interface";
-import {defaultConfig} from "./default-config";
-import {parsedConfig} from "./parsed-config";
+import 'testcafe';
+import { IConfig } from './config.interface';
+import { defaultConfig } from './default-config';
+import { parsedConfig } from './parsed-config';
 
 // tslint:disable-next-line:no-var-requires
-const jsome = require("jsome");
+const jsome = require('jsome');
 
 const config: IConfig = {
   ...defaultConfig,
@@ -21,16 +21,16 @@ if (parsedConfig && parsedConfig.testSpeed) {
   config.testSpeed = parsedConfig.testSpeed;
 }
 
-if (parsedConfig && parsedConfig.timeout) {
-  config.timeout = {
-    ...config.timeout,
-    ...parsedConfig.timeout,
-  };
+if (parsedConfig && parsedConfig.timeout && parsedConfig.timeout.longTimeout) {
+  config.timeout.longTimeout = parsedConfig.timeout.longTimeout;
+}
+if (parsedConfig && parsedConfig.timeout && parsedConfig.timeout.shortTimeout) {
+  config.timeout.shortTimeout = parsedConfig.timeout.shortTimeout;
 }
 
 if (config.showConfig) {
   // tslint:disable-next-line:no-console
-  console.log("Tests will run with the following global configuration: ");
+  console.log('Tests will run with the following global configuration: ');
   jsome(config);
 }
 
@@ -41,7 +41,7 @@ export function getCurrentConfig(t?: TestController): IConfig {
     return t.ctx.config;
   }
 
-  if (t && t.fixtureCtx &&  t.fixtureCtx.config) {
+  if (t && t.fixtureCtx && t.fixtureCtx.config) {
     return t.fixtureCtx.config;
   }
 

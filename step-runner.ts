@@ -1,32 +1,36 @@
-import chalk from "chalk";
-import {t} from "testcafe";
+import chalk from 'chalk';
+import { t } from 'testcafe';
 import {
-  ButStep, butStepMappings,
-  GivenStep, givenStepMappings,
+  ButStep,
+  butStepMappings,
+  GivenStep,
+  givenStepMappings,
   IStepMappings,
-  ThenStep, thenStepMappings,
-  WhenStep, whenStepMappings,
-} from "./step-mappings";
-import { symbols } from "./tools/string/symbols";
+  ThenStep,
+  thenStepMappings,
+  WhenStep,
+  whenStepMappings,
+} from './step-mappings';
+import { symbols } from './tools/string/symbols';
 enum StepLabel {
-  Given = "Given",
-  When = "When ",
-  Then = "Then ",
-  And = "And  ",
-  But = "But  ",
+  Given = 'Given',
+  When = 'When ',
+  Then = 'Then ',
+  And = 'And  ',
+  But = 'But  ',
 }
 
 async function executeStep(
-    stepName: GivenStep | WhenStep | ThenStep | ButStep,
-    stepMappings: IStepMappings,
-    stepLabel: StepLabel,
-  ) {
+  stepName: GivenStep | WhenStep | ThenStep | ButStep,
+  stepMappings: IStepMappings,
+  stepLabel: StepLabel
+) {
   if (executionOfCurrentTestWasCanceledByPreviousStep()) {
     return;
   }
 
   const foundStep = stepMappings[stepName];
-  if (typeof foundStep === "function" ) {
+  if (typeof foundStep === 'function') {
     await foundStep(stepName as string);
     showSuccess(stepName, stepLabel);
     return;
@@ -46,7 +50,7 @@ export async function then(stepName: ThenStep) {
 export async function but(stepName: ButStep) {
   await executeStep(stepName, butStepMappings, StepLabel.But);
 }
-export async function and(stepName: GivenStep | WhenStep | ThenStep | ButStep ) {
+export async function and(stepName: GivenStep | WhenStep | ThenStep | ButStep) {
   ensureThat(stepName).isNotAmbiguous();
 
   if (givenStepMappings[stepName as GivenStep]) {
@@ -68,16 +72,16 @@ export async function and(stepName: GivenStep | WhenStep | ThenStep | ButStep ) 
   throw new Error(`Step "${stepName}" is not mapped to an executable code.`);
 }
 
-function ensureThat(stepName: GivenStep | WhenStep | ThenStep | ButStep ) {
+function ensureThat(stepName: GivenStep | WhenStep | ThenStep | ButStep) {
   return {
     isNotAmbiguous: () => {
-      if (givenStepMappings[stepName as GivenStep] && thenStepMappings[stepName as ThenStep] ) {
+      if (givenStepMappings[stepName as GivenStep] && thenStepMappings[stepName as ThenStep]) {
         throw new Error(`Step "${stepName}" is defined as both a 'Given' and a 'Then' step.`);
       }
-      if (whenStepMappings[stepName as WhenStep] && thenStepMappings[stepName as ThenStep] ) {
+      if (whenStepMappings[stepName as WhenStep] && thenStepMappings[stepName as ThenStep]) {
         throw new Error(`Step "${stepName}" is defined as both a 'When' and a 'Then' step.`);
       }
-      if (butStepMappings[stepName as ButStep] && thenStepMappings[stepName as ThenStep] ) {
+      if (butStepMappings[stepName as ButStep] && thenStepMappings[stepName as ThenStep]) {
         throw new Error(`Step "${stepName}" is defined as both a 'But' and a 'Then' step.`);
       }
     },
@@ -86,16 +90,14 @@ function ensureThat(stepName: GivenStep | WhenStep | ThenStep | ButStep ) {
 
 function executionOfCurrentTestWasCanceledByPreviousStep(): boolean {
   const canExecute: boolean | undefined = t.ctx.canExecute;
-  return canExecute === false
-    ? true
-    : false;
+  return canExecute === false ? true : false;
 }
 
 function showSuccess(stepName: string, stepLabel: StepLabel) {
   if (!t.ctx.stepRunnerContext) {
     t.ctx.stepRunnerContext = {};
     // tslint:disable-next-line:no-console
-    console.log("");
+    console.log('');
   }
   // tslint:disable-next-line:no-console
   console.log(`  ${chalk.green(symbols.ok)} ${stepLabel} ${stepName}`);

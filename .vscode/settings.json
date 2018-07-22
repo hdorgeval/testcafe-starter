@@ -1,5 +1,6 @@
 {
   "editor.tabSize": 2,
+  "editor.useTabStops": true,
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -10,7 +11,7 @@
     "node_modules": true
   },
   "editor.tabCompletion": true,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.minimap.enabled": true,
   "editor.minimap.showSlider": "always",
   "editor.minimap.renderCharacters": true,
@@ -22,5 +23,6 @@
   "javascript.referencesCodeLens.enabled": true,
   "typescript.referencesCodeLens.enabled": true,
   "typescript.implementationsCodeLens.enabled": true,
-  "typescript.useCodeSnippetsOnMethodSuggest": true
+  "typescript.useCodeSnippetsOnMethodSuggest": true,
+  "prettier.requireConfig": true
 }
