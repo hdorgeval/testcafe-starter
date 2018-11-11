@@ -1,6 +1,6 @@
 {
   "name": "testcafe-starter",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "starter project for e2e tests with testcafe",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,6 @@
     "prettier-check": "prettier --list-different \"./**/*.ts\" ",
     "prebuild": "rimraf build",
     "build": "npm-run-all prettier-format lint tsc",
-    "preinstall": "rimraf node_modules",
     "pretestcafe-static-analyser": "rimraf reports",
     "testcafe-static-analyser": "testcafe-static-analyser",
     "build-step-mappings": "ts-node step-mappings/generator"
@@ -39,27 +38,27 @@
   "dependencies": {
     "@types/chalk": "2.2.0",
     "@types/minimist": "1.2.0",
-    "@types/node": "10.5.2",
+    "@types/node": "10.12.5",
     "chalk": "2.4.1",
     "cross-env": "5.2.0",
     "jsome": "2.5.0",
     "minimist": "1.2.0",
     "rimraf": "2.6.2",
     "slash": "2.0.0",
-    "testcafe": "0.20.5",
-    "testcafe-live": "0.1.3",
+    "testcafe": "0.23.1",
+    "testcafe-live": "0.1.4",
     "testcafe-reporter-teamcity": "1.0.10",
-    "ts-node": "7.0.0",
-    "typescript": "2.9.2"
+    "ts-node": "7.0.1",
+    "typescript": "3.1.6"
   },
   "devDependencies": {
-    "eslint": "5.2.0",
+    "eslint": "5.9.0",
     "npm-run-all": "4.1.3",
-    "prettier": "1.13.7",
+    "prettier": "1.15.2",
     "testcafe-static-analyser": "0.2.4",
     "tslint": "5.11.0",
-    "tslint-config-prettier": "1.14.0",
-    "tslint-config-standard": "7.1.0"
+    "tslint-config-prettier": "1.15.0",
+    "tslint-config-standard": "8.0.1"
   },
   "engines": {
     "vscode": "^1.18.0",

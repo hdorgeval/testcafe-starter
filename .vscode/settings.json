@@ -10,7 +10,7 @@
     "**/build": true,
     "node_modules": true
   },
-  "editor.tabCompletion": true,
+  "editor.tabCompletion": "on",
   "editor.formatOnSave": true,
   "editor.minimap.enabled": true,
   "editor.minimap.showSlider": "always",
@@ -21,8 +21,10 @@
     "**/bower_components": true
   },
   "javascript.referencesCodeLens.enabled": true,
+  "javascript.suggest.completeFunctionCalls": true,
   "typescript.referencesCodeLens.enabled": true,
   "typescript.implementationsCodeLens.enabled": true,
-  "typescript.useCodeSnippetsOnMethodSuggest": true,
-  "prettier.requireConfig": true
+  "typescript.suggest.completeFunctionCalls": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "prettier.requireConfig": true,
 }
