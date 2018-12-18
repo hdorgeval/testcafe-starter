@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.1.1] - 2018-12-18
+
+### Changed
+
+- update testcafe-static-analyser dependency.
+  - this new version is able to analyse `.meta` syntax and `test`syntax split on multiple lines.
+
 ## [3.1.0] - 2018-12-07
 
 ### Fixed
