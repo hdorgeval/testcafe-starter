@@ -49,7 +49,7 @@
     "testcafe-live": "0.1.4",
     "testcafe-reporter-teamcity": "1.0.10",
     "ts-node": "8.0.2",
-    "typescript": "3.2.2"
+    "typescript": "3.3.1"
   },
   "devDependencies": {
     "eslint": "5.9.0",
