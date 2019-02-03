@@ -6,7 +6,7 @@
   "scripts": {
     "pretest": "rimraf screenshots",
     "test": "testcafe chrome features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 --debug-on-fail",
-    "test:live": "testcafe-live chrome features/**/*.live.ts --env=local --user=user1@example.com  --selector-timeout 10000",
+    "test:live": "testcafe chrome features/**/*.live.ts --live --env=local --user=user1@example.com  --selector-timeout 10000",
     "test:teamcity": "testcafe \"chrome --ignore-certificate-errors\" features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 --reporter teamcity --screenshots-on-fail --screenshots ./screenshots --quarantine-mode",
     "tsc": "tsc",
     "tsc:init": "tsc --init",
