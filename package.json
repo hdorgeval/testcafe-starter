@@ -52,7 +52,7 @@
     "typescript": "3.3.1"
   },
   "devDependencies": {
-    "eslint": "5.9.0",
+    "eslint": "5.13.0",
     "prettier": "1.15.3",
     "testcafe-static-analyser": "1.1.0",
     "tslint": "5.11.0",
