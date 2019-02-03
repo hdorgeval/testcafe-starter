@@ -39,7 +39,7 @@
     "@types/chalk": "2.2.0",
     "@types/minimist": "1.2.0",
     "@types/node": "10.12.21",
-    "chalk": "2.4.1",
+    "chalk": "2.4.2",
     "cross-env": "5.2.0",
     "jsome": "2.5.0",
     "minimist": "1.2.0",
