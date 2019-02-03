@@ -77,7 +77,7 @@ test('Scenario: send feedback', async () => {
 
 ## To use Live mode
 
-[TestCafe Live](https://github.com/DevExpress/testcafe-live) provides a service that keeps the TestCafe process and browsers opened the whole time you are working on tests. Changes you make in code immediately restart the tests. That is, TestCafe Live allows you to see test results instantly.
+Live mode provides a service that keeps the TestCafe process and browsers opened the whole time you are working on tests. Changes you make in code immediately restart the tests. That is, TestCafe Live allows you to see test results instantly.
 
 - rename the feature file into a name that ends with .live.ts
 - add .only to the test(s) on which you want to work live
