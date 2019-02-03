@@ -38,7 +38,7 @@
   "dependencies": {
     "@types/chalk": "2.2.0",
     "@types/minimist": "1.2.0",
-    "@types/node": "10.12.12",
+    "@types/node": "10.12.21",
     "chalk": "2.4.1",
     "cross-env": "5.2.0",
     "jsome": "2.5.0",
