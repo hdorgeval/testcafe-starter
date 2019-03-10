@@ -1,8 +1,8 @@
 import { t } from 'testcafe';
 import { IConfig } from '../config/config.interface';
 import { getCurrentConfig } from '../config/testcafe-config';
-import { IPageModel } from '../domains/testcafe-sample-page/models';
-import * as selector from '../domains/testcafe-sample-page/selectors';
+import { IPageModel } from '../models';
+import * as selector from '../selectors';
 import { firstMatch } from '../tools/regex-match';
 
 /**

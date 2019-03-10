@@ -54,19 +54,19 @@ export async function and(stepName: GivenStep | WhenStep | ThenStep | ButStep) {
   ensureThat(stepName).isNotAmbiguous();
 
   if (givenStepMappings[stepName as GivenStep]) {
-    return await executeStep(stepName, givenStepMappings, StepLabel.And);
+    return executeStep(stepName, givenStepMappings, StepLabel.And);
   }
 
   if (whenStepMappings[stepName as WhenStep]) {
-    return await executeStep(stepName, whenStepMappings, StepLabel.And);
+    return executeStep(stepName, whenStepMappings, StepLabel.And);
   }
 
   if (thenStepMappings[stepName as ThenStep]) {
-    return await executeStep(stepName, thenStepMappings, StepLabel.And);
+    return executeStep(stepName, thenStepMappings, StepLabel.And);
   }
 
   if (butStepMappings[stepName as ButStep]) {
-    return await executeStep(stepName, butStepMappings, StepLabel.And);
+    return executeStep(stepName, butStepMappings, StepLabel.And);
   }
 
   throw new Error(`Step "${stepName}" is not mapped to an executable code.`);

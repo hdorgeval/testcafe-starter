@@ -1,9 +1,9 @@
 import { t } from 'testcafe';
-import { IConfig } from '../../../config/config.interface';
-import { getCurrentConfig } from '../../../config/testcafe-config';
-import { firstMatch } from '../../../tools/regex-match';
+import { IConfig } from '../config/config.interface';
+import { getCurrentConfig } from '../config/testcafe-config';
 import { IPageModel } from '../models';
 import * as selector from '../selectors';
+import { firstMatch } from '../tools/regex-match';
 
 /**
  * @step

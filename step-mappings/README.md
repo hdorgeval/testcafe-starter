@@ -20,4 +20,4 @@ step-mappings files can be regenerated at any time by running the command:
 npm run build-step-mappings
 ```
 
-> **You MUST run this command each time you add/modify/delete a step-definition file.**
+> **You MUST run this command each time you add/modify/move/delete a step-definition file.**

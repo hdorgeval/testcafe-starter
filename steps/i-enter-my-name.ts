@@ -1,6 +1,6 @@
 import { t } from 'testcafe';
-import { IConfig } from '../../../config/config.interface';
-import { getCurrentConfig } from '../../../config/testcafe-config';
+import { IConfig } from '../config/config.interface';
+import { getCurrentConfig } from '../config/testcafe-config';
 import { IPageModel } from '../models';
 import * as selector from '../selectors';
 

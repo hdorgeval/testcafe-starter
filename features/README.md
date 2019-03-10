@@ -4,16 +4,16 @@ This folder is, by convention, the place for the TestCafe feature files.
 
 ## Creating a new feature file
 
-* Create an empty TypeScript file and give it a name like `my-new-feature.spec.ts`
+- Create an empty TypeScript file and give it a name like `my-new-feature.spec.ts`
 
-* Paste the following code in this new file:
+- Paste the following code in this new file:
 
 ```typescript
-import "testcafe";
-import { getCurrentConfig } from "../config/testcafe-config";
-import {pageModel} from "../domains/my-app";
-import { env } from "../step-filters/env";
-import {and, given, then, when} from "../step-runner";
+import 'testcafe';
+import { getCurrentConfig } from '../config/testcafe-config';
+import { pageModel } from '../domains/my-app';
+import { env } from '../step-filters/env';
+import { and, given, then, when } from '../step-runner';
 
 fixture(`Feature: my new feature`)
   .before(async (ctx) => {
@@ -25,11 +25,11 @@ fixture(`Feature: my new feature`)
     t.ctx.inputData = pageModel;
   });
 
-test("Scenario: my new scenario", async () => {
-  await given("I start my App");
-  await   and("I input the given data");
-  await  when("I send my form");
-  await  then("I should receive a specific response");
+test('Scenario: my new scenario', async () => {
+  await given('I start my App');
+  await and('I input the given data');
+  await when('I send my form');
+  await then('I should receive a specific response');
 });
 ```
 
@@ -46,4 +46,4 @@ To see if an existing step can be used, just empty the step name and use VS Code
 
 ![unknown steps](../.media/screenshot02.png)
 
-If you don't find an existing suitable step, you need to create a new one [here](../domains/README.md).
+If you don't find an existing suitable step, you need to create a new one [here](../steps/README.md).

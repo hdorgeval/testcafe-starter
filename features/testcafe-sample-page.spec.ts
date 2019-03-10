@@ -1,12 +1,11 @@
 import 'testcafe';
 import { getCurrentConfig } from '../config/testcafe-config';
-import { pageModel } from '../domains/testcafe-sample-page';
+import { pageModel } from '../models';
 import { env } from '../step-filters/env';
 import { and, given, then, when } from '../step-runner';
 
 /**
  * @feature
- * @domain testcafe-sample-page
  */
 fixture('Feature: TestCafe Example')
   .before(async (ctx) => {

@@ -112,7 +112,7 @@ Live mode provides a service that keeps the TestCafe process and browsers opened
 
 ## How to create a new step-definition file
 
-- see the [readme](domains/testcafe-sample-page/README.md)
+- see the [readme](steps/README.md)
 
 ## How to run a test only in specific environment(s)
 
