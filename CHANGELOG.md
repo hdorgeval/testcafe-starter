@@ -7,12 +7,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [4.0.0] - 2019-03-11
 
-### Unreleased
+### Changed
 
-- adapt this starter project to new comming TestCafe v1.0.0
+- adapt this starter project to new TestCafe v1.0.0
 - integrate HTML reporter
 - update all dependencies
-- remove TestCafe Live dependency
+- remove TestCafe Live dependency (now integrated in TestCafe)
 - simplify project structure
 - remove static analyser
 
