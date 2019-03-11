@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "eslint": "5.15.1",
+    "multiple-cucumber-html-reporter": "1.11.6",
     "prettier": "1.16.4",
     "tslint": "5.13.1",
     "tslint-config-prettier": "1.18.0",
