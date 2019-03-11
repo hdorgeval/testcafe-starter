@@ -4,8 +4,9 @@
   "description": "starter project for e2e tests with testcafe",
   "main": "index.js",
   "scripts": {
-    "pretest": "rimraf screenshots",
+    "pretest": "rimraf screenshots && rimraf reports",
     "test": "testcafe chrome features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 --debug-on-fail -S -s screenshots",
+    "test:json": "npm test -- --reporter cucumber-json:reports/report.json --reporter-app-name='My App' --reporter-app-version='x.y.z'",
     "test:live": "testcafe chrome features/**/*.live.ts --live --env=local --user=user1@example.com  --selector-timeout 10000",
     "test:teamcity": "testcafe \"chrome --ignore-certificate-errors\" features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 --reporter teamcity -S -s screenshots --quarantine-mode",
     "tsc": "tsc",
