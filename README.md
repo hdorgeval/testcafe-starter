@@ -149,19 +149,6 @@ test('Scenario: send feedback', async () => {
 });
 ```
 
-## To create an HTML overview of all tests ( see [testcafe-static-analyser](https://github.com/hdorgeval/testcafe-static-analyser) )
-
-- run the command `testcafe-static-analyser`.
-- this module parses the source code of all your TestCafe tests and will produce an ouput like the following:
-
-![report](.media/static-reporter1.png)
-
-![report](.media/static-reporter2.png)
-
-![report](.media/static-reporter3.png)
-
-![report](.media/static-reporter4.png)
-
 ## How to execute a test from Visual Studio Code IDE
 
 To start a test from the IDE you need to install the Visual Studio Code extension [TestCafe Test Runner](https://github.com/romanresh/vscode-testcafe).
