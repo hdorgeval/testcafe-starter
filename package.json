@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "pretest": "rimraf screenshots",
-    "test": "testcafe chrome features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 --debug-on-fail",
+    "test": "testcafe chrome features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 --debug-on-fail -S -s screenshots",
     "test:live": "testcafe chrome features/**/*.live.ts --live --env=local --user=user1@example.com  --selector-timeout 10000",
-    "test:teamcity": "testcafe \"chrome --ignore-certificate-errors\" features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 --reporter teamcity --screenshots-on-fail --screenshots ./screenshots --quarantine-mode",
+    "test:teamcity": "testcafe \"chrome --ignore-certificate-errors\" features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 --reporter teamcity -S -s screenshots --quarantine-mode",
     "tsc": "tsc",
     "tsc:init": "tsc --init",
     "tslint:init": "tslint --init",
