@@ -16,8 +16,6 @@
     "prettier-check": "prettier --list-different \"./**/*.ts\" ",
     "prebuild": "rimraf build",
     "build": "npm run prettier-format && npm run lint && npm run tsc",
-    "pretestcafe-static-analyser": "rimraf reports",
-    "testcafe-static-analyser": "testcafe-static-analyser",
     "build-step-mappings": "ts-node step-mappings/generator"
   },
   "repository": {
