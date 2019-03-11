@@ -49,6 +49,19 @@ test('Scenario: send feedback', async () => {
 
 - run the command `npm test`.
 
+## To execute the tests locally with an HTML report of tests execution
+
+- run the commands:
+
+  ```sh
+  npm run test:json
+  npm run report
+  ```
+
+This will generate a nice and searchable HTML report like this ([more details here](https://github.com/hdorgeval/testcafe-reporter-cucumber-json)):
+
+![report](./.media/report01.png)
+
 ## To execute the tests on TeamCity
 
 - run the command `npm run test:teamcity`.
