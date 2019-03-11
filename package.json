@@ -43,6 +43,7 @@
     "rimraf": "2.6.3",
     "slash": "2.0.0",
     "testcafe": "1.1.0",
+    "testcafe-reporter-cucumber-json": "1.0.1",
     "testcafe-reporter-teamcity": "1.0.10",
     "ts-node": "8.0.3",
     "typescript": "3.3.3333"
