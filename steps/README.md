@@ -71,3 +71,11 @@ npm run build-step-mappings
 - Now go back to the feature file. The sentence should be available in the intellisense:
 
 ![demo](../.media/screenshot09.png)
+
+## Modifying/moving/deleting a new step
+
+> **You MUST run this command each time you add/modify/move/delete a step-definition file.**:
+
+```sh
+npm run build-step-mappings
+```
