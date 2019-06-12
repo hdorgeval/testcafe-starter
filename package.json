@@ -37,24 +37,24 @@
   "homepage": "https://github.com/hdorgeval/testcafe-starter#readme",
   "dependencies": {
     "@types/minimist": "1.2.0",
-    "@types/node": "11.11.6",
+    "@types/node": "12.0.8",
     "chalk": "2.4.2",
     "cross-env": "5.2.0",
     "jsome": "2.5.0",
     "minimist": "1.2.0",
     "rimraf": "2.6.3",
     "slash": "2.0.0",
-    "testcafe": "1.1.0",
+    "testcafe": "1.2.1",
     "testcafe-reporter-cucumber-json": "1.2.0",
     "testcafe-reporter-teamcity": "1.0.10",
-    "ts-node": "8.0.3",
-    "typescript": "3.3.4000"
+    "ts-node": "8.2.0",
+    "typescript": "3.5.1"
   },
   "devDependencies": {
-    "eslint": "5.15.3",
-    "multiple-cucumber-html-reporter": "1.11.6",
+    "eslint": "5.16.0",
+    "multiple-cucumber-html-reporter": "1.11.8",
     "prettier": "1.16.4",
-    "tslint": "5.14.0",
+    "tslint": "5.17.0",
     "tslint-config-prettier": "1.18.0",
     "tslint-config-standard": "8.0.1"
   },
