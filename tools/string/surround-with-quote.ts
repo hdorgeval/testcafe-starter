@@ -1,4 +1,4 @@
-export const surround = (input: string) => {
+export const surround = (input: string): { with: (quote: string) => string } => {
   return {
     with: (quote: string): string => {
       if (input.startsWith(quote) && input.endsWith(quote)) {

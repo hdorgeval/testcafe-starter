@@ -6,8 +6,10 @@ import * as selector from '../selectors';
  * @step
  * @then("I can submit my feedback on testcafe")
  */
-export default async (_: string) => {
+export default async (): Promise<void> => {
   // get the config that was injected into the fixture/test context by the feature
   const config = getCurrentConfig(t);
-  await t.expect(selector.submitButton.hasAttribute('disabled')).notOk({ timeout: config.timeout.longTimeout });
+  await t
+    .expect(selector.submitButton.hasAttribute('disabled'))
+    .notOk({ timeout: config.timeout.longTimeout });
 };

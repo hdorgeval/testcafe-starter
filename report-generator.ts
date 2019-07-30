@@ -1,7 +1,6 @@
 import * as path from 'path';
 
-// tslint:disable:no-var-requires
-// tslint:disable-next-line:no-implicit-dependencies
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const report = require('multiple-cucumber-html-reporter');
 
 const projectName = path.basename(__dirname);

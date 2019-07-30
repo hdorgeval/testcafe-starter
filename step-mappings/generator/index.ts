@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { getDirectoriesRecursivelyIn } from '../../tools/fs/get-directories-recursively-in';
 import { getFilesInDirectory } from '../../tools/fs/get-files-in-directory';
 import { ignoreDirThatIsIn } from '../../tools/fs/ignore-dir-that-is-in';
@@ -15,13 +16,15 @@ const folders = getDirectoriesRecursivelyIn(config.rootDirectory)
   .withFilter(ignoreDirThatIsIn(config.excludedFolders))
   .takeFiltered();
 
-folders.map((path) => stepFiles.push(...getFilesInDirectory(path, (p) => p.endsWith('.ts') && isStepFile(p))));
+folders.forEach((path: string): number =>
+  stepFiles.push(
+    ...getFilesInDirectory(path, (p: string): boolean => p.endsWith('.ts') && isStepFile(p))
+  )
+);
 
 stepFiles.length > 0
-  ? // tslint:disable-next-line:no-console
-    console.log(`[build-step-mappings] found step files: \n${stepFiles.join('\n')}`)
-  : // tslint:disable-next-line:no-console
-    console.log('[build-step-mappings] no step found');
+  ? console.log(`[build-step-mappings] found step files: \n${stepFiles.join('\n')}`)
+  : console.log('[build-step-mappings] no step found');
 
 createStepsBarrel(config.stepsBarrelFile).from(stepFiles);
 

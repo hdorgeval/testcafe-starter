@@ -1,19 +1,19 @@
 import { t } from 'testcafe';
-import { IConfig } from '../config/config.interface';
+import { Config } from '../config/config.interface';
 import { getCurrentConfig } from '../config/testcafe-config';
-import { IPageModel } from '../models';
+import { PageModel } from '../models';
 import * as selector from '../selectors';
 
 /**
  * @step
  * @given,@when("I enter my name")
  */
-export default async (_: string) => {
+export default async (): Promise<void> => {
   // get the config that was injected into the fixture/test context by the feature
-  const config: IConfig = getCurrentConfig(t);
+  const config: Config = getCurrentConfig(t);
 
   // get the page object model that was injected in the context
-  const inputData = t.ctx.inputData as IPageModel;
+  const inputData = t.ctx.inputData as PageModel;
 
   const value = inputData.name || '';
 

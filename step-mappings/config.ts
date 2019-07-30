@@ -1,6 +1,6 @@
 import { join } from 'path';
 
-export const config: IStepMappingConfig = {
+export const config: StepMappingConfig = {
   excludedFolders: [
     // list of folders that should be excluded while searching all step files
     'config',
@@ -18,7 +18,7 @@ export const config: IStepMappingConfig = {
   tab: '  ', // tab character that should be used to generate indented statements
 };
 
-export interface IStepMappingConfig {
+export interface StepMappingConfig {
   excludedFolders: string[];
   rootDirectory: string;
   stepsBarrelFile: string;

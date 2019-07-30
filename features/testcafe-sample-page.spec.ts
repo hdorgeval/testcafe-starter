@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import 'testcafe';
 import { getCurrentConfig } from '../config/testcafe-config';
 import { pageModel } from '../models';
 import { env } from '../step-filters/env';
 import { and, given, then, when } from '../step-runner';
-
+declare const fixture: FixtureFn;
 /**
  * @feature
  */

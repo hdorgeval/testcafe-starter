@@ -1,8 +1,8 @@
-import { IConfig } from './config.interface';
+import { Config } from './config.interface';
 import { env } from './environments';
 import { user } from './personas';
 
-export const defaultConfig: IConfig = {
+export const defaultConfig: Config = {
   env: env('local'),
   showConfig: true,
   testSpeed: 1.0,

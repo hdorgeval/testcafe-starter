@@ -1,6 +1,6 @@
 import { t } from 'testcafe';
 import { getCurrentConfig } from '..//config/testcafe-config';
-import { IPageModel } from '../models';
+import { PageModel } from '../models';
 import * as selector from '../selectors';
 import { firstMatch } from '../tools/regex-match';
 
@@ -8,9 +8,9 @@ import { firstMatch } from '../tools/regex-match';
  * @step
  * @then("a 'Thank you' message should appear with my name")
  */
-export default async (stepName: string) => {
+export default async (stepName: string): Promise<void> => {
   // get the page object model that was injected in the context
-  const inputData = t.ctx.inputData as IPageModel;
+  const inputData = t.ctx.inputData as PageModel;
   const config = getCurrentConfig(t);
 
   // extract the message embedded in the step name

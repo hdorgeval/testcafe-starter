@@ -1,5 +1,5 @@
 import { t } from 'testcafe';
-import { IConfig } from '../config/config.interface';
+import { Config } from '../config/config.interface';
 import { getCurrentConfig } from '../config/testcafe-config';
 import * as selector from '../selectors';
 
@@ -7,9 +7,9 @@ import * as selector from '../selectors';
  * @step
  * @when("I send my feedback on testcafe")
  */
-export default async (_: string) => {
+export default async (): Promise<void> => {
   // get the config that was injected into the fixture/test context by the feature
-  const config: IConfig = getCurrentConfig(t);
+  const config: Config = getCurrentConfig(t);
 
   await t
     .setTestSpeed(config.testSpeed)

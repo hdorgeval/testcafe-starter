@@ -1,8 +1,8 @@
-export interface IPageModel {
+export interface PageModel {
   name?: string;
   remoteTesting?: boolean;
 }
 
-export const pageModel: IPageModel = {
+export const pageModel: PageModel = {
   name: 'john doe',
 };

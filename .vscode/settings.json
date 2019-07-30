@@ -11,6 +11,7 @@
     "node_modules": true
   },
   "editor.tabCompletion": "on",
+  "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": true,
   "editor.minimap.showSlider": "always",
@@ -26,5 +27,26 @@
   "typescript.implementationsCodeLens.enabled": true,
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.tsdk": "./node_modules/typescript/lib",
+  "prettier.eslintIntegration": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
   "prettier.requireConfig": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.options": {
+    "extensions": [".js", ".ts", ".tsx"]
+  },
+  "eslint.validate": [
+
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ],
 }

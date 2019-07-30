@@ -5,7 +5,7 @@ import {
   butStepMappings,
   GivenStep,
   givenStepMappings,
-  IStepMappings,
+  StepMappings,
   ThenStep,
   thenStepMappings,
   WhenStep,
@@ -20,11 +20,28 @@ enum StepLabel {
   But = 'But  ',
 }
 
+function executionOfCurrentTestWasCanceledByPreviousStep(): boolean {
+  const canExecute: boolean | undefined = t.ctx.canExecute;
+  return canExecute === false ? true : false;
+}
+
+function showSuccess(stepName: string, stepLabel: StepLabel): void {
+  if (!t.ctx.stepRunnerContext) {
+    t.ctx.stepRunnerContext = {};
+
+    // eslint-disable-next-line no-console
+    console.log('');
+  }
+
+  // eslint-disable-next-line no-console
+  console.log(`  ${chalk.green(symbols.ok)} ${stepLabel} ${stepName}`);
+}
+
 async function executeStep(
   stepName: GivenStep | WhenStep | ThenStep | ButStep,
-  stepMappings: IStepMappings,
+  stepMappings: StepMappings,
   stepLabel: StepLabel
-) {
+): Promise<void> {
   if (executionOfCurrentTestWasCanceledByPreviousStep()) {
     return;
   }
@@ -38,19 +55,20 @@ async function executeStep(
 
   throw new Error(`Step "${stepName}" is not mapped to an executable code.`);
 }
-export async function given(stepName: GivenStep) {
+export async function given(stepName: GivenStep): Promise<void> {
   await executeStep(stepName, givenStepMappings, StepLabel.Given);
 }
-export async function when(stepName: WhenStep) {
+export async function when(stepName: WhenStep): Promise<void> {
   await executeStep(stepName, whenStepMappings, StepLabel.When);
 }
-export async function then(stepName: ThenStep) {
+export async function then(stepName: ThenStep): Promise<void> {
   await executeStep(stepName, thenStepMappings, StepLabel.Then);
 }
-export async function but(stepName: ButStep) {
+export async function but(stepName: ButStep): Promise<void> {
   await executeStep(stepName, butStepMappings, StepLabel.But);
 }
-export async function and(stepName: GivenStep | WhenStep | ThenStep | ButStep) {
+export async function and(stepName: GivenStep | WhenStep | ThenStep | ButStep): Promise<void> {
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   ensureThat(stepName).isNotAmbiguous();
 
   if (givenStepMappings[stepName as GivenStep]) {
@@ -72,9 +90,11 @@ export async function and(stepName: GivenStep | WhenStep | ThenStep | ButStep) {
   throw new Error(`Step "${stepName}" is not mapped to an executable code.`);
 }
 
-function ensureThat(stepName: GivenStep | WhenStep | ThenStep | ButStep) {
+function ensureThat(
+  stepName: GivenStep | WhenStep | ThenStep | ButStep
+): { isNotAmbiguous: () => void } {
   return {
-    isNotAmbiguous: () => {
+    isNotAmbiguous: (): void => {
       if (givenStepMappings[stepName as GivenStep] && thenStepMappings[stepName as ThenStep]) {
         throw new Error(`Step "${stepName}" is defined as both a 'Given' and a 'Then' step.`);
       }
@@ -86,19 +106,4 @@ function ensureThat(stepName: GivenStep | WhenStep | ThenStep | ButStep) {
       }
     },
   };
-}
-
-function executionOfCurrentTestWasCanceledByPreviousStep(): boolean {
-  const canExecute: boolean | undefined = t.ctx.canExecute;
-  return canExecute === false ? true : false;
-}
-
-function showSuccess(stepName: string, stepLabel: StepLabel) {
-  if (!t.ctx.stepRunnerContext) {
-    t.ctx.stepRunnerContext = {};
-    // tslint:disable-next-line:no-console
-    console.log('');
-  }
-  // tslint:disable-next-line:no-console
-  console.log(`  ${chalk.green(symbols.ok)} ${stepLabel} ${stepName}`);
 }

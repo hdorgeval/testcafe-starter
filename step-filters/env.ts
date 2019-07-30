@@ -1,12 +1,12 @@
 import { t } from 'testcafe';
-import { IConfig } from '../config/config.interface';
+import { Config } from '../config/config.interface';
 import { TargetEnvironnement } from '../config/environments';
 import { getCurrentConfig } from '../config/testcafe-config';
 import chalk from '../node_modules/chalk';
 
-export const env = {
-  only: async (...targets: TargetEnvironnement[]) => {
-    const config: IConfig = getCurrentConfig(t);
+export const env: { only: (...targets: TargetEnvironnement[]) => void } = {
+  only: async (...targets: TargetEnvironnement[]): Promise<void> => {
+    const config: Config = getCurrentConfig(t);
     if (config.env === undefined) {
       throw new Error('The env property in the configuration file is not defined.');
     }
@@ -28,9 +28,9 @@ export const env = {
       }
     }
     if (t.ctx.canExecute === false) {
-      // tslint:disable-next-line:no-console
       const message = `next steps will not run because scenario is targeted only for ${targets}`;
-      // tslint:disable-next-line:no-console
+
+      // eslint-disable-next-line no-console
       console.log(`    ${chalk.inverse(message)}`);
     }
   },

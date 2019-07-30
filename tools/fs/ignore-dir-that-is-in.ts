@@ -1,11 +1,15 @@
 import { sep } from 'path';
 
-export const ignoreDirThatIsIn = (folders: string[]) => (path: string) => {
+export const ignoreDirThatIsIn = (folders: string[]): ((path: string) => boolean) => (
+  path: string
+): boolean => {
   return (
-    /* prettier-ignore */
     path
       .split(sep)
-      .filter((folderName) => folders.filter((folderToIgnore) => folderToIgnore === folderName).length > 0)
-      .length === 0
+      .filter(
+        (folderName: string): boolean =>
+          folders.filter((folderToIgnore: string): boolean => folderToIgnore === folderName)
+            .length > 0
+      ).length === 0
   );
 };

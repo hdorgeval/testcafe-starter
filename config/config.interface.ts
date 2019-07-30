@@ -1,25 +1,25 @@
-import { IEnvInfo } from './environments';
-import { IUserInfo } from './personas';
+import { EnvInfo } from './environments';
+import { UserInfo } from './personas';
 
-export interface IConfig {
-  env?: IEnvInfo;
-  user?: IUserInfo;
+export interface Config {
+  env?: EnvInfo;
+  user?: UserInfo;
   testSpeed: number;
-  timeout: ITimeout;
+  timeout: Timeout;
   showConfig: boolean;
 }
 
-export interface ITimeout {
+export interface Timeout {
   [index: string]: number;
   longTimeout: number;
   shortTimeout: number;
 }
 
-export interface IParsedConfig {
-  env?: IEnvInfo;
-  user?: IUserInfo;
+export interface ParsedConfig {
+  env?: EnvInfo;
+  user?: UserInfo;
 
   testSpeed?: number;
-  timeout?: Partial<ITimeout>;
+  timeout?: Partial<Timeout>;
   showConfig?: boolean;
 }

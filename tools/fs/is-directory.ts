@@ -1,3 +1,3 @@
 import { PathLike, statSync } from 'fs';
 
-export const isDirectory = (path: PathLike) => statSync(path).isDirectory();
+export const isDirectory = (path: PathLike): boolean => statSync(path).isDirectory();

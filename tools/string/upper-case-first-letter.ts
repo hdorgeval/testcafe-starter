@@ -1,6 +1,6 @@
 export const upperCaseFirstLetter = (input: string): string => {
   return [...input]
-    .map((char, charIndex) => {
+    .map((char: string, charIndex): string => {
       if (charIndex === 0) {
         return char.toUpperCase();
       }

@@ -1,14 +1,19 @@
 import { PathLike } from 'fs';
 import { readAllLinesInFile } from './read-all-lines-in-file';
 
-export const getExportedFunctionsIn = (filePath: PathLike): IFuncInfo[] => {
+export const getExportedFunctionsIn = (filePath: PathLike): FuncInfo[] => {
   try {
-    const results: IFuncInfo[] = [];
+    const results: FuncInfo[] = [];
     const lines = readAllLinesInFile(filePath);
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const module = require(filePath.toString());
     for (const key in module) {
-      if (module.hasOwnProperty(key) && typeof module[key] === 'function') {
-        const lineNumber = 1 + lines.findIndex((line) => line.includes('export ') && line.includes(key));
+      if (Object.prototype.hasOwnProperty.call(module, key) && typeof module[key] === 'function') {
+        const lineNumber =
+          1 +
+          lines.findIndex(
+            (line: string): boolean => line.includes('export ') && line.includes(key)
+          );
         const functionName = key;
         results.push({ functionName, lineNumber, filePath });
       }
@@ -19,7 +24,7 @@ export const getExportedFunctionsIn = (filePath: PathLike): IFuncInfo[] => {
   }
 };
 
-export interface IFuncInfo {
+export interface FuncInfo {
   functionName: string;
   lineNumber: number;
   filePath: PathLike;

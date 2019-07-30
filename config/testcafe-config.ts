@@ -1,12 +1,12 @@
 import 'testcafe';
-import { IConfig } from './config.interface';
+import { Config } from './config.interface';
 import { defaultConfig } from './default-config';
 import { parsedConfig } from './parsed-config';
 
-// tslint:disable-next-line:no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const jsome = require('jsome');
 
-const config: IConfig = {
+const config: Config = {
   ...defaultConfig,
 };
 
@@ -29,14 +29,14 @@ if (parsedConfig && parsedConfig.timeout && parsedConfig.timeout.shortTimeout) {
 }
 
 if (config.showConfig) {
-  // tslint:disable-next-line:no-console
+  // eslint-disable-next-line no-console
   console.log('Tests will run with the following global configuration: ');
   jsome(config);
 }
 
 export default config;
 
-export function getCurrentConfig(t?: TestController): IConfig {
+export function getCurrentConfig(t?: TestController): Config {
   if (t && t.ctx && t.ctx.config) {
     return t.ctx.config;
   }

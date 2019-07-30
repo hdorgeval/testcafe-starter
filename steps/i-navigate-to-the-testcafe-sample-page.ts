@@ -1,24 +1,27 @@
 import { t } from 'testcafe';
-import { IConfig } from '../config/config.interface';
+import { Config } from '../config/config.interface';
 import { getCurrentConfig } from '../config/testcafe-config';
 
 /**
  * @step
  * @given,@when("I navigate to the testcafe sample page")
  */
-export default async (_: string) => {
+export default async (): Promise<void> => {
   // get the config that was injected into the fixture/test context by the feature
-  const config: IConfig = getCurrentConfig(t);
+  const config: Config = getCurrentConfig(t);
 
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   ensureEnvIsSetupInConfigurationFile(config);
   if (config && config.env) {
     await t.navigateTo(config.env.url);
   }
 };
 
-function ensureEnvIsSetupInConfigurationFile(config: IConfig) {
+function ensureEnvIsSetupInConfigurationFile(config: Config): void {
   if (config && config.env && config.env.url) {
     return;
   }
-  throw new Error('env.url is not setup in the configuration file. Check testcafe-config.ts file is correctly setup');
+  throw new Error(
+    'env.url is not setup in the configuration file. Check testcafe-config.ts file is correctly setup'
+  );
 }

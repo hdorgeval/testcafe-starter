@@ -1,7 +1,7 @@
 import { t } from 'testcafe';
-import { IConfig } from '../config/config.interface';
+import { Config } from '../config/config.interface';
 import { getCurrentConfig } from '../config/testcafe-config';
-import { IPageModel } from '../models';
+import { PageModel } from '../models';
 import * as selector from '../selectors';
 import { firstMatch } from '../tools/regex-match';
 
@@ -9,12 +9,12 @@ import { firstMatch } from '../tools/regex-match';
  * @step
  * @when("I do something specific")
  */
-export default async (stepName: string) => {
+export default async (stepName: string): Promise<void> => {
   // get the config that was injected into the fixture context by the feature
-  const config: IConfig = getCurrentConfig(t);
+  const config: Config = getCurrentConfig(t);
 
   // get the page object model that was injected in the test context
-  const inputData = t.ctx.inputData as IPageModel;
+  const inputData = t.ctx.inputData as PageModel;
 
   // extract the value embedded in the step name
   // by convention this value is prefixed and postfixed by a single quote

@@ -1,12 +1,12 @@
 import * as minimist from 'minimist';
-import { IParsedConfig } from './config.interface';
+import { ParsedConfig } from './config.interface';
 import { env } from './environments';
 import { user } from './personas';
 
 const args = minimist(process.argv.slice(2));
 
 // get the options --env=xxx --user=yyy from the command line
-const config: IParsedConfig = {
+const config: ParsedConfig = {
   env: env(args.env),
   user: user(args.user),
 };
