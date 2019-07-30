@@ -4,6 +4,8 @@
 	"recommendations": [
 		// Extension identifier format: ${publisher}.${name}. Example: vscode.csharp
 		"hdorgeval.testcafe-snippets",
-		"romanresh.testcafe-test-runner"
+		"romanresh.testcafe-test-runner",
+		"esbenp.prettier-vscode",
+		"dbaeumer.vscode-eslint"
 	]
 }

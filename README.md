@@ -102,8 +102,6 @@ Live mode provides a service that keeps the TestCafe process and browsers opened
 
 ## Recommended Visual Studio Code Extensions
 
-- Move TS (will automatically chage all imports when you rename or move a step file)
-- TSLint
 - Git Lens
 - Regex Previewer by Christof Marti
 - TestCafe Snippets (see [say goodbye to flakyness](https://github.com/hdorgeval/testcafe-snippets))
