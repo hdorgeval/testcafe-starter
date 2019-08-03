@@ -1,7 +1,7 @@
-import * as minimist from 'minimist';
 import { ParsedConfig } from './config.interface';
 import { env } from './environments';
 import { user } from './personas';
+import * as minimist from 'minimist';
 
 const args = minimist(process.argv.slice(2));
 

@@ -1,6 +1,6 @@
-import { existsSync } from 'fs';
 import { isDirectory } from './is-directory';
 import { isFile } from './is-file';
+import { existsSync } from 'fs';
 
 export const fileExists = (filePath: string): boolean => {
   if (existsSync(filePath) && isFile(filePath)) {

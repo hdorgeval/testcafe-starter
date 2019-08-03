@@ -1,5 +1,5 @@
-import { t } from 'testcafe';
 import * as selector from '../selectors';
+import { t } from 'testcafe';
 
 /**
  * @step

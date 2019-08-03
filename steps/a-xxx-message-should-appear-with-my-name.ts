@@ -1,8 +1,8 @@
-import { t } from 'testcafe';
 import { getCurrentConfig } from '..//config/testcafe-config';
 import { PageModel } from '../models';
 import * as selector from '../selectors';
 import { firstMatch } from '../tools/regex-match';
+import { t } from 'testcafe';
 
 /**
  * @step

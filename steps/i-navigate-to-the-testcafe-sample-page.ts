@@ -1,6 +1,6 @@
-import { t } from 'testcafe';
 import { Config } from '../config/config.interface';
 import { getCurrentConfig } from '../config/testcafe-config';
+import { t } from 'testcafe';
 
 /**
  * @step

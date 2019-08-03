@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
-import { PathLike, writeFileSync } from 'fs';
-import { EOL } from 'os';
 import { ensureDirectoryStructureExists } from '../../tools/fs/ensure-directory-structure-exists';
 import { getExportedFunctionsIn, FuncInfo } from '../../tools/fs/get-exported-functions-in';
 import { getFileName } from '../../tools/fs/get-filename';
@@ -12,6 +10,8 @@ import { slash } from '../../tools/fs/slash';
 import { surround } from '../../tools/string/surround-with-quote';
 import { upperCaseFirstLetter } from '../../tools/string/upper-case-first-letter';
 import { config } from '../config';
+import { EOL } from 'os';
+import { PathLike, writeFileSync } from 'fs';
 
 let exportIndex = -1;
 function nextIndex(): number {

@@ -1,6 +1,6 @@
+import { isDirectory } from './is-directory';
 import { PathLike, readdirSync } from 'fs';
 import { join } from 'path';
-import { isDirectory } from './is-directory';
 export class FluentSyntaxForDirectoryFiltering {
   private allResults: string[] = [];
   private filteredResults: string[] = [];

@@ -1,6 +1,4 @@
 /* eslint-disable indent */
-import { PathLike, writeFileSync } from 'fs';
-import { EOL } from 'os';
 import { ensureDirectoryStructureExists } from '../../tools/fs/ensure-directory-structure-exists';
 import { getFileName } from '../../tools/fs/get-filename';
 import { getFilePathWithoutExtension } from '../../tools/fs/get-filepath-without-extension';
@@ -8,6 +6,8 @@ import { getFuncNameFrom } from '../../tools/fs/get-func-name-from-file-name';
 import { getRelativePathOf } from '../../tools/fs/get-relative-path-from';
 import { slash } from '../../tools/fs/slash';
 import { config } from '../config';
+import { EOL } from 'os';
+import { PathLike, writeFileSync } from 'fs';
 
 let exportIndex = -1;
 function nextIndex(): number {

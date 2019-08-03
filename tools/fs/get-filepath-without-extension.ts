@@ -1,5 +1,5 @@
-import { parse, sep } from 'path';
 import { getFileName } from './get-filename';
+import { parse, sep } from 'path';
 
 export const getFilePathWithoutExtension = (path: string): string => {
   const fileName = getFileName(path);

@@ -1,6 +1,6 @@
-import { t } from 'testcafe';
 import { getCurrentConfig } from '../config/testcafe-config';
 import * as selector from '../selectors';
+import { t } from 'testcafe';
 
 /**
  * @step

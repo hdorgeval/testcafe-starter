@@ -1,6 +1,6 @@
-import { dirname, relative, sep } from 'path';
 import { getFileName } from './get-filename';
 import { isFile } from './is-file';
+import { dirname, relative, sep } from 'path';
 
 export const getRelativePathOf = (
   fileOrFolderPath: string

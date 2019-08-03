@@ -1,5 +1,5 @@
-import { PathLike } from 'fs';
 import { FluentSyntaxForDirectoryFiltering, getDirectoriesIn } from './get-directories-in';
+import { PathLike } from 'fs';
 
 function getAllDirectoriesRecursivelyIn(path: PathLike): string[] {
   const subDirs = getDirectoriesIn(path).takeAll();

@@ -1,5 +1,3 @@
-import chalk from 'chalk';
-import { t } from 'testcafe';
 import {
   ButStep,
   butStepMappings,
@@ -12,6 +10,8 @@ import {
   whenStepMappings,
 } from './step-mappings';
 import { symbols } from './tools/string/symbols';
+import chalk from 'chalk';
+import { t } from 'testcafe';
 enum StepLabel {
   Given = 'Given',
   When = 'When ',

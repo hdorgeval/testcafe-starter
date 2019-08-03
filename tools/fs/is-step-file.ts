@@ -1,5 +1,5 @@
-import { PathLike } from 'fs';
 import { readAllLinesInFile } from './read-all-lines-in-file';
+import { PathLike } from 'fs';
 
 export const isStepFile = (path: PathLike): boolean => {
   try {

@@ -1,6 +1,6 @@
+import { isFile } from './is-file';
 import { PathLike, readdirSync } from 'fs';
 import { join } from 'path';
-import { isFile } from './is-file';
 
 const defaultFileFilter = (): boolean => true;
 
