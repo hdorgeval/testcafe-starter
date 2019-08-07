@@ -43,7 +43,7 @@
     "minimist": "1.2.0",
     "rimraf": "2.6.3",
     "slash": "3.0.0",
-    "testcafe": "1.4.0-rc.2",
+    "testcafe": "1.4.0-rc.3",
     "testcafe-reporter-cucumber-json": "1.2.0",
     "testcafe-reporter-teamcity": "1.0.10",
     "ts-node": "8.3.0",
