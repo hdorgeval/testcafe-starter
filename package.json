@@ -36,15 +36,15 @@
   "homepage": "https://github.com/hdorgeval/testcafe-starter#readme",
   "dependencies": {
     "@types/minimist": "1.2.0",
-    "@types/node": "12.6.8",
+    "@types/node": "12.7.1",
     "chalk": "2.4.2",
     "cross-env": "5.2.0",
     "jsome": "2.5.0",
     "minimist": "1.2.0",
     "rimraf": "2.6.3",
     "slash": "3.0.0",
-    "testcafe": "1.4.0-rc.3",
-    "testcafe-reporter-cucumber-json": "1.2.0",
+    "testcafe": "1.4.0",
+    "testcafe-reporter-cucumber-json": "2.0.0",
     "testcafe-reporter-teamcity": "1.0.10",
     "ts-node": "8.3.0",
     "typescript": "3.5.3"
