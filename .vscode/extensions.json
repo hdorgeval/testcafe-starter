@@ -6,6 +6,9 @@
 		"hdorgeval.testcafe-snippets",
 		"romanresh.testcafe-test-runner",
 		"esbenp.prettier-vscode",
-		"dbaeumer.vscode-eslint"
+		"dbaeumer.vscode-eslint",
+		"oderwat.indent-rainbow",
+		"coenraads.bracket-pair-colorizer-2",
+		"wmaurer.change-case"
 	]
 }
