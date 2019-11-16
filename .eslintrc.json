@@ -13,7 +13,8 @@
     "plugin:prettier/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
-    "plugin:import/typescript"
+    "plugin:import/typescript",
+    "plugin:testcafe/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -27,7 +28,7 @@
       "modules": true
     }
   },
-  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "plugins": ["@typescript-eslint", "prettier", "import", "testcafe"],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
     "indent": ["error", 2, {

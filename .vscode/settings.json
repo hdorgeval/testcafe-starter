@@ -29,7 +29,6 @@
   "typescript.tsdk": "./node_modules/typescript/lib",
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
-  "prettier.requireConfig": true,
   "eslint.alwaysShowStatus": true,
   "eslint.autoFixOnSave": true,
   "eslint.options": {

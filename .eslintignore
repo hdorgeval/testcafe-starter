@@ -1,2 +1,6 @@
-node_modules
+.vscode
 **/vendor/*.js
+build
+coverage
+node_modules
+reports
