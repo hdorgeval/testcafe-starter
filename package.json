@@ -35,9 +35,10 @@
   },
   "homepage": "https://github.com/hdorgeval/testcafe-starter#readme",
   "dependencies": {
+    "@types/chalk": "2.2.0",
     "@types/minimist": "1.2.0",
     "@types/node": "12.12.8",
-    "chalk": "2.4.2",
+    "chalk": "3.0.0",
     "cross-env": "5.2.0",
     "jsome": "2.5.0",
     "minimist": "1.2.0",

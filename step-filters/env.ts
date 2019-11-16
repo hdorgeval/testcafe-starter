@@ -1,8 +1,8 @@
 import { Config } from '../config/config.interface';
 import { TargetEnvironnement } from '../config/environments';
 import { getCurrentConfig } from '../config/testcafe-config';
-import chalk from '../node_modules/chalk';
 import { t } from 'testcafe';
+import * as chalk from 'chalk';
 
 export const env: { only: (...targets: TargetEnvironnement[]) => void } = {
   only: async (...targets: TargetEnvironnement[]): Promise<void> => {
