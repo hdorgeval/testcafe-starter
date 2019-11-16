@@ -42,7 +42,7 @@
     "chalk": "3.0.0",
     "jsome": "2.5.0",
     "minimist": "1.2.0",
-    "rimraf": "2.6.3",
+    "rimraf": "3.0.0",
     "slash": "3.0.0",
     "testcafe": "1.4.0",
     "testcafe-reporter-cucumber-json": "4.0.0",
