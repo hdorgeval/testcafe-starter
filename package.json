@@ -40,7 +40,6 @@
     "@types/minimist": "1.2.0",
     "@types/node": "12.12.8",
     "chalk": "3.0.0",
-    "cross-env": "5.2.0",
     "jsome": "2.5.0",
     "minimist": "1.2.0",
     "rimraf": "2.6.3",
