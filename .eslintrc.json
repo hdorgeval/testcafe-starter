@@ -29,6 +29,7 @@
   },
   "plugins": ["@typescript-eslint", "prettier", "import"],
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off",
     "indent": ["error", 2, {
       "SwitchCase": 1
     }],

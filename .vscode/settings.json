@@ -27,7 +27,6 @@
   "typescript.implementationsCodeLens.enabled": true,
   "typescript.suggest.completeFunctionCalls": true,
   "typescript.tsdk": "./node_modules/typescript/lib",
-  "prettier.eslintIntegration": true,
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
   "prettier.requireConfig": true,

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
 import 'testcafe';
 import { getCurrentConfig } from '../config/testcafe-config';
 import { pageModel } from '../models';
