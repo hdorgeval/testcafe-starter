@@ -1,6 +1,6 @@
 {
   "name": "testcafe-starter",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "description": "starter project for e2e tests with testcafe",
   "main": "index.js",
   "scripts": {
@@ -44,7 +44,7 @@
     "rimraf": "2.6.3",
     "slash": "3.0.0",
     "testcafe": "1.4.0",
-    "testcafe-reporter-cucumber-json": "2.0.0",
+    "testcafe-reporter-cucumber-json": "4.0.0",
     "testcafe-reporter-teamcity": "1.0.10",
     "ts-node": "8.3.0",
     "typescript": "3.5.3"
@@ -56,7 +56,7 @@
     "eslint-config-prettier": "6.0.0",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-prettier": "3.1.0",
-    "multiple-cucumber-html-reporter": "1.12.0",
+    "multiple-cucumber-html-reporter": "1.13.1",
     "prettier": "1.18.2"
   },
   "engines": {
