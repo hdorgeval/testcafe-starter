@@ -44,7 +44,7 @@
     "minimist": "1.2.0",
     "rimraf": "3.0.0",
     "slash": "3.0.0",
-    "testcafe": "1.6.1",
+    "testcafe": "1.7.0",
     "testcafe-reporter-cucumber-json": "4.0.0",
     "testcafe-reporter-teamcity": "1.0.10",
     "ts-node": "8.5.2",
@@ -63,7 +63,6 @@
     "prettier": "1.19.1"
   },
   "engines": {
-    "vscode": "^1.18.0",
-    "node": ">=6.4.0"
+    "node": ">=8.0.0"
   }
 }
