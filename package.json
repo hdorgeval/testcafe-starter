@@ -38,7 +38,7 @@
   "dependencies": {
     "@types/chalk": "2.2.0",
     "@types/minimist": "1.2.0",
-    "@types/node": "12.12.8",
+    "@types/node": "12.12.12",
     "chalk": "3.0.0",
     "jsome": "2.5.0",
     "minimist": "1.2.0",
