@@ -41,7 +41,7 @@
     "@types/node": "13.7.0",
     "chalk": "3.0.0",
     "jsome": "2.5.0",
-    "minimist": "1.2.0",
+    "minimist": "1.2.2",
     "rimraf": "3.0.1",
     "slash": "3.0.0",
     "testcafe": "1.7.0",
