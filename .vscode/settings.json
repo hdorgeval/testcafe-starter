@@ -30,12 +30,10 @@
   "prettier.singleQuote": true,
   "prettier.trailingComma": "all",
   "eslint.alwaysShowStatus": true,
-  "eslint.autoFixOnSave": true,
   "eslint.options": {
     "extensions": [".js", ".ts", ".tsx"]
   },
   "eslint.validate": [
-
     "javascript",
     "javascriptreact",
     {
@@ -47,4 +45,7 @@
       "autoFix": true
     }
   ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
 }
