@@ -48,6 +48,5 @@ script:
 
 os:
   - linux
-  - osx
-
-osx_image: xcode11.3
+  # - osx
+# osx_image: xcode11.3
