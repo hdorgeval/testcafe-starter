@@ -16,7 +16,7 @@
     "test:json": "npm test -- --reporter cucumber-json:reports/report.json --reporter-app-name='My App' --reporter-app-version='x.y.z' --skip-js-errors",
     "test:live": "testcafe chrome features/**/*.live.ts --live --env=local --user=user1@example.com  --selector-timeout 10000 --skip-js-errors",
     "test:teamcity": "testcafe \"chrome --ignore-certificate-errors\" features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 --reporter teamcity -S -s screenshots --quarantine-mode --skip-js-errors",
-    "test": "testcafe chrome features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 -S -s screenshots --skip-js-errors --hostname localhost",
+    "test": "testcafe chrome features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 -S -s screenshots --skip-js-errors --skip-uncaught-errors --hostname localhost",
     "tsc:init": "tsc --init",
     "tsc": "tsc"
   },
