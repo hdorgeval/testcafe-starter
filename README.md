@@ -1,9 +1,9 @@
 # TestCafe Starter
 
 [![Build Status](https://travis-ci.org/hdorgeval/testcafe-starter.svg?branch=master)](https://travis-ci.org/hdorgeval/testcafe-starter)
-
+[![Build status](https://ci.appveyor.com/api/projects/status/7tlvxcnt06yy6umo?svg=true)](https://ci.appveyor.com/project/hdorgeval/testcafe-starter)
 <a href="https://github.com/DevExpress/testcafe">
-    <img alt="Gherkin with TestCafe" src="https://img.shields.io/badge/gherkin%20with-TestCafe-2fa4cf.svg">
+<img alt="Gherkin with TestCafe" src="https://img.shields.io/badge/gherkin%20with-TestCafe-2fa4cf.svg">
 </a>
 
 ## A lightweight and extensible framework to write e2e tests in a gherkin-like syntax.
