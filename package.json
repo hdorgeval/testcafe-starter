@@ -38,16 +38,16 @@
   "dependencies": {
     "@types/chalk": "2.2.0",
     "@types/minimist": "1.2.0",
-    "@types/node": "13.7.0",
-    "chalk": "3.0.0",
+    "@types/node": "13.13.4",
+    "chalk": "4.0.0",
     "jsome": "2.5.0",
-    "minimist": "1.2.0",
-    "rimraf": "3.0.1",
+    "minimist": "1.2.5",
+    "rimraf": "3.0.2",
     "slash": "3.0.0",
     "testcafe": "1.8.4",
     "testcafe-reporter-cucumber-json": "5.1.0",
     "testcafe-reporter-teamcity": "1.0.10",
-    "ts-node": "8.6.2",
+    "ts-node": "8.10.1",
     "typescript": "3.7.5"
   },
   "devDependencies": {
