@@ -48,7 +48,7 @@
     "testcafe-reporter-cucumber-json": "5.1.0",
     "testcafe-reporter-teamcity": "1.0.10",
     "ts-node": "8.10.1",
-    "typescript": "3.7.5"
+    "typescript": "3.8.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "2.30.0",
