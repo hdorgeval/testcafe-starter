@@ -1,5 +1,7 @@
 # TestCafe Starter
 
+[![Build Status](https://travis-ci.org/hdorgeval/testcafe-starter.svg?branch=master)](https://travis-ci.org/hdorgeval/testcafe-starter)
+
 <a href="https://github.com/DevExpress/testcafe">
     <img alt="Gherkin with TestCafe" src="https://img.shields.io/badge/gherkin%20with-TestCafe-2fa4cf.svg">
 </a>
