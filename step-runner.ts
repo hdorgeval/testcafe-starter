@@ -69,7 +69,6 @@ export async function but(stepName: ButStep): Promise<void> {
   await executeStep(stepName, butStepMappings, StepLabel.But);
 }
 export async function and(stepName: GivenStep | WhenStep | ThenStep | ButStep): Promise<void> {
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   ensureThat(stepName).isNotAmbiguous();
 
   if (givenStepMappings[stepName as GivenStep]) {

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { ensureDirectoryStructureExists } from '../../tools/fs/ensure-directory-structure-exists';
 import { getExportedFunctionsIn, FuncInfo } from '../../tools/fs/get-exported-functions-in';
 import { getFileName } from '../../tools/fs/get-filename';

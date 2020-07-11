@@ -10,7 +10,6 @@ export default async (): Promise<void> => {
   // get the config that was injected into the fixture/test context by the feature
   const config: Config = getCurrentConfig(t);
 
-  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   ensureEnvIsSetupInConfigurationFile(config);
   if (config && config.env) {
     await t.navigateTo(config.env.url);
