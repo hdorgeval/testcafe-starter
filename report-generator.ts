@@ -18,8 +18,8 @@ report.generate({
   disableLog: true,
   displayDuration: true,
   durationInMS: true,
-  jsonDir: 'reports',
+  jsonDir: 'cucumber-json-reports',
   openReportInBrowser: true,
   reportName: 'TestCafe Report',
-  reportPath: 'reports',
+  reportPath: 'cucumber-json-reports/html',
 });

@@ -13,7 +13,7 @@
     "prettier-check": "prettier --list-different \"./**/*.ts\" ",
     "prettier-format": "prettier --write \"./**/*.ts\" ",
     "report": "ts-node report-generator.ts",
-    "test:json": "npm test -- --reporter cucumber-json:reports/report.json --reporter-app-name='My App' --reporter-app-version='x.y.z' --skip-js-errors",
+    "test:json": "npm test -- --reporter cucumber-json --reporter-app-name='My App' --reporter-app-version='x.y.z' --skip-js-errors",
     "test:live": "testcafe chrome features/**/*.live.ts --live --env=local --user=user1@example.com  --selector-timeout 10000 --skip-js-errors",
     "test:teamcity": "testcafe \"chrome --ignore-certificate-errors\" features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 --reporter teamcity -S -s screenshots --quarantine-mode --skip-js-errors",
     "test": "testcafe chrome features/**/*.spec.ts --env=local --user=user1@example.com  --selector-timeout 10000 -S -s screenshots --skip-js-errors --skip-uncaught-errors --hostname localhost",
@@ -45,7 +45,7 @@
     "rimraf": "3.0.2",
     "slash": "3.0.0",
     "testcafe": "1.8.4",
-    "testcafe-reporter-cucumber-json": "5.1.0",
+    "testcafe-reporter-cucumber-json": "6.0.3",
     "testcafe-reporter-teamcity": "1.0.10",
     "ts-node": "8.10.1",
     "typescript": "3.8.3"
