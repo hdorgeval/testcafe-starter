@@ -4,3 +4,4 @@ build
 coverage
 node_modules
 reports
+cucumber-json-reports
